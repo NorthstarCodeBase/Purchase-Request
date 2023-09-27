@@ -1,0 +1,543 @@
+"Screen_Requestor As screen.'tabletLayout_HeaderAndGallery_ver3.0'":
+
+    Label6_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(221, 79, 14, 1)
+        Font: =Font.Arial
+        FontWeight: =FontWeight.Bold
+        Height: =154
+        Size: =40
+        Text: =If(CountRows(Gallery2.AllItems) = 0 , "NO ITEMS TO APPROVE", Blank())
+        Width: =788
+        X: =289
+        Y: =311
+        ZIndex: =1
+
+    Title1_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255,255,255,1)
+        Fill: =RGBA(0,78,151,59)
+        Font: =Font.Lato
+        Height: =105
+        PaddingRight: =10
+        Text: =
+        Width: =1159
+        Y: =79
+        ZIndex: =2
+
+    Title1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255,255,255,1)
+        Fill: =RGBA(0,78,151,59)
+        Font: =Font.Lato
+        Height: =73
+        PaddingRight: =10
+        Text: ="PURCHASING REQUEST MANAGEMENT"
+        Width: =Parent.Width
+        ZIndex: =3
+
+    Label1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =33
+        Text: |-
+            ="PR ID: "
+        Width: =102
+        X: =18
+        Y: =92
+        ZIndex: =4
+
+    TextInputID As text:
+        Default: =Blank()
+        Font: =Font.Lato
+        Format: =TextFormat.Number
+        HintText: ="PR ID"
+        Reset: =varreset
+        Width: =102
+        X: =18
+        Y: =129
+        ZIndex: =5
+
+    Create As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0,78,151,59)
+        Font: =Font.Lato
+        Height: =46
+        OnSelect: =ResetForm(Form1);NewForm(Form1);Navigate(Screen_RequestorCreate)
+        Text: ="Create New Order"
+        Width: =180
+        X: =1171
+        Y: =79
+        ZIndex: =6
+
+    LoginUser As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =33
+        Text: |-
+            ="User login: " & User().FullName
+        Width: =311
+        X: =1040
+        ZIndex: =7
+
+    LoginDate As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Text: |-
+            ="Date: " & Today()
+        Width: =311
+        X: =1040
+        Y: =33
+        ZIndex: =8
+
+    Back As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(0,78,151,59)
+        Font: =Font.Lato
+        Height: =46
+        OnSelect: =Navigate(Screen_Main,ScreenTransition.CoverRight)
+        Text: ="Back"
+        Width: =180
+        X: =1171
+        Y: =138
+        ZIndex: =9
+
+    Search_4 As button:
+        BorderStyle: =BorderStyle.None
+        Fill: =RGBA(255,0,0,1)
+        Font: =Font.Lato
+        Height: =46
+        OnSelect: |-
+            =Set(varreset, true);
+            Set(varreset, false)
+        Text: ="Reset Filter"
+        Width: =137
+        X: =1009
+        Y: =125
+        ZIndex: =10
+
+    "Gallery2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        BorderColor: =RGBA(54, 176, 75, 1)
+        BorderThickness: =3
+        DelayItemLoading: =true
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =531
+        Items: |-
+            =Sort(
+                Filter(
+                    PRManagement,
+                    varuser.Department = Department,
+                    'PR Status'.Value = StatusDropdown.Selected.Value || StatusDropdown.Selected.Value = Blank(),
+                    Created >= Datefrom.SelectedDate || Datefrom.SelectedDate = Blank(),
+                    Created <= Dateto.SelectedDate || Dateto.SelectedDate = Blank(),
+                    'Total Amount' >= Value(Slider1.Text) && 'Total Amount' <= Value(Slider1_1.Text),
+                    ID = Value(TextInputID.Text) || Value(TextInputID.Text) = Blank()
+             ),
+                ID,
+                SortOrder.Descending
+            )
+        Layout: =Layout.Vertical
+        ShowScrollbar: =false
+        TemplateFill: =RGBA(0,10, 0, 0.1)
+        TemplatePadding: =0
+        TemplateSize: =60
+        Visible: |
+            =If(CountRows(Gallery2.AllItems) = 0 , false, true)
+        Width: =1366
+        Y: =237
+        ZIndex: =11
+
+        Title3_1 As label:
+            Align: =Align.Center
+            Fill: =Switch(ThisItem.'PR Status'.Value, "Pending",RGBA(255,255,0,0.5),"Approved",RGBA(0,100,80,0.5), RGBA(255,0,0,0.5))
+            Font: =Font.Lato
+            Height: =60
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.ID
+            Width: |
+                =90
+            ZIndex: =1
+
+        TicketTitle_1 As label:
+            Font: =Font.Lato
+            Height: =59
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            Width: =216
+            X: =Separater1_1.X+5
+            ZIndex: =2
+
+        Requester_1 As label:
+            Font: =Font.Lato
+            Height: =59
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Created By'.DisplayName
+            Width: =165
+            X: =507
+            Y: =1
+            ZIndex: =3
+
+        NextArrow2_1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(varItem, ThisItem);
+                ResetForm(Form1);ViewForm(Form1);Navigate(Screen_RequestorCreate)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =1306
+            ZIndex: =4
+
+        Separatorw_1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        GL1_Money_1 As label:
+            Align: =Align.Right
+            Font: =Font.Lato
+            Height: =59
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =Text(Round(Value(ThisItem.'Total Amount'),2),"[$-en-US]0,000") & "    VND  "
+            Width: =222
+            X: =677
+            ZIndex: =6
+
+        Separator2_1 As rectangle:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: =TicketTitle_1.X +TicketTitle_1.Width
+            ZIndex: =7
+
+        Separater1_1 As rectangle:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: =Title3_1.Width
+            ZIndex: =8
+
+        Separator3_1 As rectangle:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: =Requester_1.X +Requester_1.Width
+            ZIndex: =9
+
+        Separator4_3 As rectangle:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: =GL1_Money_1.X +GL1_Money_1.Width
+            ZIndex: =10
+
+        GL1_Dept_3 As label:
+            Font: =Font.Lato
+            Height: =59
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Department
+            Width: =187
+            X: =313
+            Y: =1
+            ZIndex: =11
+
+        Separator4_2 As rectangle:
+            Height: =60
+            OnSelect: =Select(Parent)
+            Width: =2
+            X: =GL1_Dept_3.X +GL1_Dept_3.Width
+            ZIndex: =12
+
+        GL1_Dept_2 As label:
+            Font: =Font.Lato
+            Height: =59
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Purpose
+            Width: =222
+            X: =906
+            ZIndex: =13
+
+    StatusDropdown As dropdown:
+        AllowEmptySelection: =true
+        Default: ="Pending"
+        Font: =Font.Lato
+        Items: |-
+            =//Distinct(PRManagement,'PR Status'.Value)
+            ["Approved","Pending","Rejected"]
+        Reset: =varreset
+        Width: =109
+        X: =277
+        Y: =129
+        ZIndex: =18
+
+    StatusDropdown_1 As dropdown:
+        AllowEmptySelection: =true
+        Default: ="Pending"
+        Font: =Font.Lato
+        Items: =Distinct(PRManagement,'Created By'.DisplayName)
+        Reset: =varreset
+        Width: =111
+        X: =143
+        Y: =129
+        ZIndex: =19
+
+    Label1_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =34
+        Text: |-
+            ="Create by:"
+        Width: =112
+        X: =142
+        Y: =95
+        ZIndex: =20
+
+    Label1_3 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =37
+        Text: |-
+            ="Status:"
+        Width: =109
+        X: =277
+        Y: =93
+        ZIndex: =21
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =2
+        ZIndex: =21
+
+        Search_12 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =46
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: |-
+                ="ID
+                "
+            Width: =90
+            Y: =191
+            ZIndex: =12
+
+        Search_13 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =46
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: |-
+                ="Title
+                "
+            Width: =226
+            X: =89
+            Y: =191
+            ZIndex: =13
+
+        Search_15 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =46
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: |-
+                ="Requester
+                "
+            Width: =169
+            X: =501
+            Y: =191
+            ZIndex: =14
+
+        Search_16 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =46
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: |-
+                ="Amount
+                "
+            Width: =229
+            X: =669
+            Y: =191
+            ZIndex: =15
+
+        Search_14 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =46
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: |-
+                ="Department
+                "
+            Width: =188
+            X: =314
+            Y: =191
+            ZIndex: =16
+
+        Search_17 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =46
+            OnSelect: =
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: |-
+                ="Purpose
+                "
+            Width: =468
+            X: =898
+            Y: =191
+            ZIndex: =17
+
+    Label1_4 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =37
+        Text: |-
+            ="Date from:"
+        Width: =123
+        X: =412
+        Y: =93
+        ZIndex: =24
+
+    Label1_5 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =37
+        Text: |-
+            ="Date to:"
+        Width: =125
+        X: =559
+        Y: =93
+        ZIndex: =25
+
+    Label1_6 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =37
+        Text: |-
+            ="Amount:    " & Text(Round(Value(Slider1.Text),2),"[$-en-US]0,000")  &  "-"& Text(Round(Value(Slider1_1.Text),2),"[$-en-US]0,000") & "  VND"
+        Width: =314
+        X: =726
+        Y: =87
+        ZIndex: =26
+
+    Icon6 As icon.Reload:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.Reload
+        OnSelect: =Refresh(PRManagement)
+        Y: =4
+        ZIndex: =27
+
+    Slider1 As text:
+        Default: =0
+        Format: =TextFormat.Number
+        Height: =34
+        Reset: =varreset
+        Width: =131
+        X: =726
+        Y: =132
+        ZIndex: =28
+
+    Slider1_1 As text:
+        Default: |
+            =1000000000
+        Format: =TextFormat.Number
+        Height: =34
+        Reset: =varreset
+        Width: =131
+        X: =867
+        Y: =132
+        ZIndex: =29
+
+    Datefrom As datepicker:
+        DefaultDate: =Today()-365
+        Height: =42
+        Size: =11
+        Width: =126
+        X: =409
+        Y: =128
+        ZIndex: =30
+
+    Dateto As datepicker:
+        DefaultDate: =Today()+1
+        Height: =41
+        InputTextPlaceholder: =
+        Size: =11
+        Width: =126
+        X: =558
+        Y: =129
+        ZIndex: =31
+

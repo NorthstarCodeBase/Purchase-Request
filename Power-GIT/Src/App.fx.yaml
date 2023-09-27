@@ -1,0 +1,127 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |
+        =// Assign Variables depend on this sharepoint list: https://northstarprecision.sharepoint.com/sites/Northstarsystem/Lists/PRROLE/AllItems.aspx
+        Concurrent(
+            Set(
+                varDirector,
+                LookUp(
+                    PRROLE,
+                    ROLE = "GD",
+                    PIC
+                )
+            ),
+            Set(
+                varHeadofFinance,
+                LookUp(
+                    PRROLE,
+                    ROLE = "FINANACE_MANAGER",
+                    PIC
+                )
+            ),
+            Set(
+                varAdmin,
+                LookUp(
+                    PRROLE,
+                    ROLE = "ADMIN",
+                    PIC
+                )
+            )
+        );
+        // Assign Manager of current user
+        IfError(
+            //Check depend on the current Level
+            Office365Users.Manager(Office365Users.Manager(Office365Users.Manager(User().Email).Id).Id).DisplayName,
+            Set(
+                varManager,
+                {
+                    Claims: Concatenate(
+                        "i:0#.f|membership|",
+                        Office365Users.ManagerV2(User().Email).mail
+                    ),
+                    Department: "",
+                    DisplayName: Office365Users.ManagerV2(User().Email).displayName,
+                    Email: Office365Users.ManagerV2(User().Email).mail,
+                    JobTitle: "",
+                    Picture: ""
+                }
+            ),
+            //Check depend on the current Level
+            IfError(
+                Office365Users.Manager(Office365Users.Manager(Office365Users.Manager(Office365Users.Manager(User().Email).Id).Id).Id).DisplayName,
+                Set(
+                    varManager,
+                    {
+                        Claims: Concatenate(
+                            "i:0#.f|membership|",
+                            Office365Users.ManagerV2(Office365Users.ManagerV2(User().Email).mail).mail
+                        ),
+                        Department: "",
+                        DisplayName: Office365Users.ManagerV2(Office365Users.ManagerV2(User().Email).mail).displayName,
+                        Email: Office365Users.ManagerV2(Office365Users.ManagerV2(User().Email).mail).mail,
+                        JobTitle: "",
+                        Picture: ""
+                    }
+                ),
+                //Check depend on the current Level
+                varManager,
+                {
+                    Claims: Concatenate(
+                        "i:0#.f|membership|",
+                        Office365Users.ManagerV2(Office365Users.ManagerV2(Office365Users.ManagerV2(User().Email).mail).mail).mail
+                    ),
+                    Department: "",
+                    DisplayName: Office365Users.ManagerV2(Office365Users.ManagerV2(Office365Users.ManagerV2(User().Email).mail).mail).displayName,
+                    Email: Office365Users.ManagerV2(Office365Users.ManagerV2(Office365Users.ManagerV2(User().Email).mail).mail).mail,
+                    JobTitle: "",
+                    Picture: ""
+                }
+            )
+        );
+        Concurrent(
+        // Assign User
+            Set(
+                varuser,
+                Office365Users.MyProfile()
+            ),
+        // Set the ID depend on Param
+            If(
+                !IsBlank(Param("ID")),
+                Set(
+                    varItem,
+                    LookUp(
+                        PRManagement,
+                        ID = Value(Param("ID"))
+                    )
+                )
+            ),
+            If(
+                !IsBlank(Param("LV")),
+                Set(
+                    varMgr,
+                    Value(Param("LV"))
+                )
+            )
+        );
+    StartScreen: |-
+        =
+        // Start Screen is for direct link to application
+        
+        Switch(
+            Param("startscreen"),
+            "main",
+            Screen_Main,
+            "approvalscreen",
+            Screen_AppFunction,
+            "userview",
+            Screen_RequestorCreate
+        )
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

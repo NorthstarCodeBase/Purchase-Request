@@ -1,0 +1,75 @@
+{
+  "17154283-55f4-46da-afd2-58e263e6cfa4": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1656/1.0.1656.3429/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://northstarprecision.sharepoint.com/sites/Northstarsystem": {
+        "dataSources": {
+          "PRManagement": {
+            "tableName": "89a6dc55-a206-4358-ae94-ce9f45ec70a9"
+          },
+          "PRROLE": {
+            "tableName": "4aecd0e1-4184-4286-badb-8b1657a5bde1"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "PRManagement",
+      "PRROLE"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "17154283-55f4-46da-afd2-58e263e6cfa4"
+  },
+  "5c4f7616-4279-45d2-a0ad-e1129eb37d23": {
+    "appActions": [
+      "Manager",
+      "ManagerV2",
+      "MyProfile"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/master/1.0.1653.3400/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "5c4f7616-4279-45d2-a0ad-e1129eb37d23"
+  },
+  "d85bf51b-bd73-47c0-85ee-44519829602f": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/master/1.0.1653.3400/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "d85bf51b-bd73-47c0-85ee-44519829602f"
+  }
+}

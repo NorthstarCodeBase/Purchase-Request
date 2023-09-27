@@ -1,0 +1,36 @@
+Message_Done As screen:
+    Fill: =ColorFade( Color.Gray,90%)
+    OnHidden: =
+    OnVisible: =Refresh(PRManagement)
+
+    Icon2 As icon.Check:
+        Height: =203
+        Icon: =Icon.CheckBadge
+        Width: =202
+        X: =582
+        Y: =205
+        ZIndex: =1
+
+    Label3_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 94, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =224
+        Size: =36
+        Text: ="Your PR is submitted."
+        Width: =926
+        X: =220
+        Y: =369
+        ZIndex: =2
+
+    Timer1 As timer:
+        AutoStart: =true
+        Duration: =2000
+        Font: =Font.Lato
+        OnTimerEnd: =Navigate(Screen_Main,ScreenTransition.UnCoverRight)
+        Visible: =false
+        X: =20
+        Y: =60
+        ZIndex: =4
+

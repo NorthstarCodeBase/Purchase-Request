@@ -1,0 +1,336 @@
+Screen_Main As screen:
+    OnVisible: =
+
+    Label2 As label:
+        Align: =Align.Center
+        BorderStyle: =BorderStyle.None
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0,78,151,59)
+        Font: =Font.Lato
+        Height: =69
+        Size: =36
+        Text: ="PURCHASING CONTROL"
+        Width: =1365
+        ZIndex: =1
+
+    LoginUser_4 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Height: =33
+        Text: |-
+            ="User login: " & User().FullName
+        Width: =311
+        X: =1055
+        Y: =2
+        ZIndex: =5
+
+    LoginDate_4 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.Lato
+        Text: |-
+            ="Date: " & Today()
+        Width: =311
+        X: =1055
+        Y: =35
+        ZIndex: =6
+
+    Image1 As image:
+        Height: =464
+        Image: =Purchase
+        Width: =464
+        X: =116
+        Y: =88
+        ZIndex: =8
+
+    Label5_5 As label:
+        Font: =Font.Lato
+        Height: =25
+        Size: =9
+        Text: ="version 1.0.0"
+        Width: =296
+        Y: =718
+        ZIndex: =16
+
+    Label5_6 As label:
+        Font: =Font.Lato
+        Height: =25
+        Size: =9
+        Text: |-
+            ="Last update: 19/Sep/2023"
+        Width: =296
+        Y: =743
+        ZIndex: =17
+
+    Label5_7 As label:
+        Font: =Font.Lato
+        Height: =36
+        Size: =9
+        Text: |-
+            ="Tech support: Hai.vu@northstar.vn;          Nguyet.Chu@northstar.vn"
+        Width: =398
+        X: =968
+        Y: =732
+        ZIndex: =18
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =20
+
+        GDApprove_1 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =58
+            OnSelect: |-
+                =Launch("https://northstarprecision.sharepoint.com/sites/Northstarsystem")
+            Text: ="User Guide"
+            Width: =405
+            X: =146
+            Y: =627
+            ZIndex: =13
+
+        Label5_4 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Size: =9
+            Text: ="You can get user guide from here"
+            Width: =296
+            X: =188
+            Y: =587
+            ZIndex: =14
+
+        Icon8 As icon.DocumentwithContent:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =41
+            Icon: =Icon.DocumentWithContent
+            Width: =56
+            X: =146
+            Y: =635
+            ZIndex: =15
+
+    Icon4 As icon.LogJournal:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =66
+        Icon: =Icon.LogJournal
+        Width: =65
+        X: =1301
+        ZIndex: =26
+
+    Group14 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =26
+
+        MgrApprove As button:
+            BorderStyle: =BorderStyle.None
+            Fill: |
+                =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =58
+            OnSelect: |
+                =Concurrent(
+                    Set(
+                        varMgr,
+                        1
+                    ),
+                    Set(
+                        varStatus,
+                        false
+                    )
+                );
+                If(
+                    User().FullName = "Nguyet Chu" || User().FullName = "Hai Vu" || IsBlankOrError(Office365Users.ManagerV2(Office365Users.ManagerV2(Office365Users.MyProfile().Id).id).id),
+                    Navigate(
+                        Screen_Approval,
+                        ScreenTransition.Cover
+                    ),
+                    Navigate(
+                        Message_PermissionIssue,
+                        ScreenTransition.UnCover
+                    )
+                );
+            Text: ="Line Manager approve"
+            Width: =405
+            X: =849
+            Y: =276
+            ZIndex: =2
+
+        FINApprove As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =58
+            OnSelect: |
+                =If(
+                    User().Email = varHeadofFinance.Email || User().FullName = "Nguyet Chu" || User().FullName = "Hai Vu",
+                    Navigate(Screen_Approval,ScreenTransition.Cover),
+                    Navigate(
+                        Message_PermissionIssue,
+                        ScreenTransition.Cover
+                    )
+                );
+                Set(varMgr,2);
+            Text: ="Finace Manager approve"
+            Width: =405
+            X: =849
+            Y: =414
+            ZIndex: =3
+
+        GDApprove As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =58
+            OnSelect: =If(User().Email=varDirector.Email||User().Email=LookUp(PRROLE,ROLE="ADMIN1",PIC).Email||User().Email=LookUp(PRROLE,ROLE="ADMIN2",PIC).Email,Navigate(Screen_Approval,ScreenTransition.Cover),Navigate(Message_PermissionIssue,ScreenTransition.UnCover));Set(varMgr,3)
+            Text: ="GD approve"
+            Width: =405
+            X: =849
+            Y: =552
+            ZIndex: =4
+
+        Create_1 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =53
+            OnSelect: =Navigate(Screen_Requestor,ScreenTransition.Cover)
+            Text: ="Create New Order"
+            Width: =405
+            X: =849
+            Y: =143
+            ZIndex: =7
+
+        Label5 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Size: =9
+            Text: ="Click here to view and create new Purchase Order"
+            Width: =296
+            X: =903
+            Y: =103
+            ZIndex: =9
+
+        Label5_1 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Size: =9
+            Text: ="Managers can click here to approve/reject PR"
+            Width: =296
+            X: =903
+            Y: =236
+            ZIndex: =10
+
+        Label5_2 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Size: =9
+            Text: ="Finance Manager can click here to approve/reject PR"
+            Width: =296
+            X: =904
+            Y: =374
+            ZIndex: =11
+
+        Label5_3 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Size: =9
+            Text: ="General Director can click here to approve/reject PR"
+            Width: =296
+            X: =905
+            Y: =512
+            ZIndex: =12
+
+        Circle1 As circle:
+            Fill: =RGBA(203, 102, 102, 1)
+            Height: =39
+            Visible: =Value(Mrg_Noti.Text)
+            Width: =39
+            X: =1226
+            Y: =256
+            ZIndex: =19
+
+        Mrg_Noti As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =23
+            Size: =20
+            Text: |-
+                =CountRows(
+                    Filter(
+                        PRManagement,
+                        'PR Status'.Value = "Pending",
+                        User().Email = 'Line Manager'.Email,
+                        'Manager Confirmation'.Value = "Pending"
+                    )
+                )
+            Visible: =Value(Mrg_Noti.Text)
+            Width: =39
+            X: =1226
+            Y: =263
+            ZIndex: =21
+
+        Circle1_1 As circle:
+            Fill: =RGBA(203, 102, 102, 1)
+            Height: =39
+            Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
+            Width: =39
+            X: =1227
+            Y: =399
+            ZIndex: =22
+
+        FIN_Noti As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =23
+            Size: =20
+            Text: |-
+                =CountRows(
+                    Filter(
+                        PRManagement,
+                        'PR Status'.Value = "Pending" && 'Manager Confirmation'.Value = "Approve",
+                        'Finance Confirmation'.Value = "Pending"
+                    )
+                )
+            Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
+            Width: =39
+            X: =1227
+            Y: =406
+            ZIndex: =23
+
+        Circle1_2 As circle:
+            Fill: =RGBA(203, 102, 102, 1)
+            Height: =39
+            Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
+            Width: =39
+            X: =1227
+            Y: =536
+            ZIndex: =24
+
+        GD_Noti As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.'Lato Black'
+            Height: =23
+            Size: =20
+            Text: |-
+                =CountRows(
+                    Filter(
+                        PRManagement,
+                        (ID = Value(varItem.ID) || Value(TextInput1_1.Text) = Blank() && 'PR Status'.Value = "Pending"),
+                        'Finance Confirmation'.Value = "Approve",
+                        'GD Confirmation'.Value = "Pending"
+                    )
+                )
+            Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
+            Width: =39
+            X: =1227
+            Y: =543
+            ZIndex: =25
+

@@ -1,0 +1,49 @@
+"'Approve Done' As screen":
+    Fill: =ColorFade( Color.Gray,90%)
+    OnHidden: =
+    OnVisible: =Refresh(PRManagement)
+
+    Icon2_1 As icon.Check:
+        Height: =209
+        Icon: =Icon.CheckBadge
+        Width: =297
+        X: =534
+        Y: =203
+        ZIndex: =1
+
+    Label3_2 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 94, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =97
+        Size: =36
+        Text: ="Thanks for your dedication!"
+        Width: =923
+        X: =221
+        Y: =490
+        ZIndex: =2
+
+    Timer1_1 As timer:
+        AutoStart: =true
+        Duration: =2000
+        Font: =Font.Lato
+        OnTimerEnd: =Navigate(Screen_Main,ScreenTransition.UnCoverRight)
+        Visible: =false
+        X: =20
+        Y: =60
+        ZIndex: =4
+
+    Label3_3 As label:
+        Align: =Align.Center
+        Color: =RGBA(0, 94, 146, 1)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =97
+        Size: =36
+        Text: ="Action Done"
+        Width: =923
+        X: =221
+        Y: =412
+        ZIndex: =5
+
