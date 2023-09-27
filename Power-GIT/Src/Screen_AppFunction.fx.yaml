@@ -1351,10 +1351,11 @@ Screen_AppFunction As screen:
             ZIndex: =14
 
         Label8 As label:
-            Height: =33
+            Height: =206
             Text: |-
                 =If(
                 varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
+            VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =283
             X: =1007
