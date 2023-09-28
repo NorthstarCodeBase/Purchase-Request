@@ -64,7 +64,9 @@
         Fill: =RGBA(0,78,151,59)
         Font: =Font.Lato
         Height: =46
-        OnSelect: =ResetForm(Form1);NewForm(Form1);Navigate(Screen_RequestorCreate)
+        OnSelect: |-
+            =Set(varItem, Blank());
+            ResetForm(Form1);NewForm(Form1);Navigate(Screen_RequestorCreate)
         Text: ="Create New Order"
         Width: =180
         X: =1171

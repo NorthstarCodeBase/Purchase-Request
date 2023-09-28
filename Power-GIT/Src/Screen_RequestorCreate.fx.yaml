@@ -1047,14 +1047,16 @@ Screen_RequestorCreate As screen:
             Y: =523
             ZIndex: =11
 
-    BadgeCanvas1 As Badge:
-        Content: =varManager.DisplayName
-        DisplayMode: =DisplayMode.Edit
-        Height: =70
-        Width: =70
-        X: =926
-        Y: =482
-        ZIndex: =13
+    Label10_6 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =11
+        Text: =varItem.'Manager Confirmation'.Value
+        Visible: =If(Form1.Mode = FormMode.New, true, false)
+        Width: =111
+        X: =1243
+        Y: =491
+        ZIndex: =24
 
     Group5 As group:
         Height: =5
@@ -1071,7 +1073,7 @@ Screen_RequestorCreate As screen:
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =70
+            Width: =67
             X: =926
             Y: =483
             ZIndex: =14
@@ -1082,8 +1084,8 @@ Screen_RequestorCreate As screen:
             Size: =11
             Text: =varManager.DisplayName
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =94
-            X: =1007
+            Width: =89
+            X: =1003
             Y: =483
             ZIndex: =15
 
@@ -1092,8 +1094,8 @@ Screen_RequestorCreate As screen:
             Size: =11
             Text: =Office365Users.UserProfile(varManager.Email).JobTitle
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =232
-            X: =1007
+            Width: =221
+            X: =1003
             Y: =504
             ZIndex: =16
 
@@ -1178,4 +1180,26 @@ Screen_RequestorCreate As screen:
             X: =1011
             Y: =706
             ZIndex: =23
+
+    Label10_7 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =11
+        Text: =varItem.'Finance Confirmation'.Value
+        Visible: =If(Form1.Mode = FormMode.New, true, false)
+        Width: =111
+        X: =1243
+        Y: =588
+        ZIndex: =25
+
+    Label10_8 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =44
+        Size: =11
+        Text: =varItem.'GD Confirmation'.Value
+        Visible: =If(Form1.Mode = FormMode.New, true, false)
+        Width: =111
+        X: =1243
+        Y: =693
+        ZIndex: =26
 
