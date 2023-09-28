@@ -199,7 +199,7 @@ Screen_Main As screen:
             Fill: =RGBA(0,78,151,59)
             Font: =Font.Lato
             Height: =53
-            OnSelect: =Navigate(Screen_Requestor,ScreenTransition.Cover)
+            OnSelect: =Refresh(PRManagement);Navigate(Screen_Requestor,ScreenTransition.Cover)
             Text: ="Create New Order"
             Width: =405
             X: =849
