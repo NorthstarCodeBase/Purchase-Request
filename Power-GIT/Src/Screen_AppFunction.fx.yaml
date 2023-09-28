@@ -586,6 +586,7 @@ Screen_AppFunction As screen:
                 ZIndex: =4
 
             "InfoButtonCanvas1 As 'Information button'":
+                BasePaletteColor: =""
                 Content: ="Click to Attachment to download and view"
                 DisplayMode: =DisplayMode.View
                 Height: =32

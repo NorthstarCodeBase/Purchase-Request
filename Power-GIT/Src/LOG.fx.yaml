@@ -1,0 +1,58 @@
+LOG As screen:
+
+    Label11 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 78, 151, 1)
+        Font: =Font.'Lato Black'
+        Height: =65
+        Size: =20
+        Text: ="LOG"
+        Width: =1366
+        ZIndex: =1
+
+    Label12 As label:
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =48
+        Text: ="Initial Version"
+        Width: =1226
+        X: =140
+        Y: =113
+        ZIndex: =2
+
+    Label12_1 As label:
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =48
+        Text: ="2023/09/28"
+        Width: =140
+        Y: =113
+        ZIndex: =3
+
+    Label12_2 As label:
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =48
+        Text: ="Date"
+        Width: =140
+        Y: =65
+        ZIndex: =4
+
+    Label12_3 As label:
+        BorderThickness: =1
+        Fill: =RGBA(237, 237, 237, 1)
+        Height: =48
+        Text: ="Update"
+        Width: =1226
+        X: =140
+        Y: =65
+        ZIndex: =5
+
+    Icon7 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 78, 151, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back() 
+        ZIndex: =6
+

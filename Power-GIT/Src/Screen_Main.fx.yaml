@@ -115,6 +115,7 @@ Screen_Main As screen:
         Color: =RGBA(255, 255, 255, 1)
         Height: =66
         Icon: =Icon.LogJournal
+        OnSelect: =Navigate(LOG)
         Width: =65
         X: =1301
         ZIndex: =26
