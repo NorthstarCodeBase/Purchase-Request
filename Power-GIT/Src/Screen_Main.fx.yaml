@@ -88,8 +88,8 @@ Screen_Main As screen:
                 =Launch("https://northstarprecision.sharepoint.com/sites/Northstarsystem")
             Text: ="User Guide"
             Width: =405
-            X: =146
-            Y: =627
+            X: =133
+            Y: =598
             ZIndex: =13
 
         Label5_4 As label:
@@ -98,8 +98,8 @@ Screen_Main As screen:
             Size: =9
             Text: ="You can get user guide from here"
             Width: =296
-            X: =188
-            Y: =587
+            X: =175
+            Y: =558
             ZIndex: =14
 
         Icon8 As icon.DocumentwithContent:
@@ -107,8 +107,8 @@ Screen_Main As screen:
             Height: =41
             Icon: =Icon.DocumentWithContent
             Width: =56
-            X: =146
-            Y: =635
+            X: =133
+            Y: =606
             ZIndex: =15
 
     Icon4 As icon.LogJournal:
@@ -334,4 +334,43 @@ Screen_Main As screen:
             X: =1227
             Y: =543
             ZIndex: =25
+
+    Group7_1 As group:
+        Height: =5
+        Width: =5
+        X: =20
+        Y: =20
+        ZIndex: =30
+
+        GDApprove_2 As button:
+            BorderStyle: =BorderStyle.None
+            Fill: =RGBA(0,78,151,59)
+            Font: =Font.Lato
+            Height: =58
+            OnSelect: =Navigate(Screen1)
+            Text: ="Request Flow"
+            Width: =405
+            X: =133
+            Y: =678
+            ZIndex: =27
+
+        Label5_8 As label:
+            Align: =Align.Center
+            Font: =Font.Lato
+            Height: =21
+            Size: =9
+            Text: ="You can get PR FLow from here"
+            Width: =296
+            X: =175
+            Y: =660
+            ZIndex: =28
+
+        Icon8_1 As icon.DocumentwithContent:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =41
+            Icon: =Icon.Tray
+            Width: =56
+            X: =133
+            Y: =686
+            ZIndex: =29
 

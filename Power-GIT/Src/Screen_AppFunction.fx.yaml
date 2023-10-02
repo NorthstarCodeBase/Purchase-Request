@@ -177,80 +177,6 @@ Screen_AppFunction As screen:
         Y: =73
         ZIndex: =12
 
-        "'Approve Log_DataCard1' As typedDataCard.textualEditCard":
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="ApproveLog"
-            Default: =ThisItem.'Approve Log'
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@PRManagement],DataSourceInfo.DisplayName,"ApproveLog")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =134
-            MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "ApproveLog")
-            Required: =false
-            Update: =DataCardValue3.Text
-            Width: =468
-            X: =1
-            Y: =6
-            ZIndex: =1
-
-            DataCardKey11 As label:
-                AutoHeight: =true
-                Font: =Font.Lato
-                Height: =34
-                Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                Wrap: =false
-                X: =30
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue3 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                Font: =Font.Lato
-                Height: =85
-                MaxLength: =Parent.MaxLength
-                Mode: =TextMode.MultiLine
-                PaddingLeft: =5
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Tooltip: =Parent.DisplayName
-                Width: =408
-                X: =30
-                Y: =44
-                ZIndex: =2
-
-            ErrorMessage11 As label:
-                AutoHeight: =true
-                Font: =Font.Lato
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =DataCardValue3.Y + DataCardValue3.Height
-                ZIndex: =3
-
-            StarVisible11 As label:
-                Align: =Align.Center
-                Font: =Font.Lato
-                Height: =DataCardKey11.Height
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
-                Wrap: =false
-                Y: =DataCardKey11.Y
-                ZIndex: =4
-
         Title_DataCard2 As typedDataCard.textualEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Title"
@@ -1264,7 +1190,7 @@ Screen_AppFunction As screen:
                 =false
             Width: =234
             X: =2
-            Y: =6
+            Y: =450
             ZIndex: =13
 
             DataCardKey22 As label:

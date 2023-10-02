@@ -1,0 +1,15 @@
+Screen1 As screen:
+
+    Image4 As image:
+        Height: =768
+        Image: ='NPRP-CrossFuncitonChart.drawio'
+        Width: =1366
+        ZIndex: =1
+
+    Icon7_1 As icon.BackArrow:
+        Color: =RGBA(56, 96, 178, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back() 
+        ZIndex: =2
+

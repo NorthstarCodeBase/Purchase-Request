@@ -1066,37 +1066,37 @@ Screen_RequestorCreate As screen:
         ZIndex: =24
 
         Image2 As image:
-            Height: =70
+            Height: =62
             Image: =Office365Users.UserPhoto(varManager.Email)
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =67
+            Width: =57
             X: =926
-            Y: =483
+            Y: =491
             ZIndex: =14
 
         Label10 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =25
+            Height: =19
             Size: =11
             Text: =varManager.DisplayName
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =89
-            X: =1003
-            Y: =483
+            Width: =205
+            X: =992
+            Y: =491
             ZIndex: =15
 
         Label10_1 As label:
-            Height: =19
+            Height: =43
             Size: =11
             Text: =Office365Users.UserProfile(varManager.Email).JobTitle
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =221
-            X: =1003
-            Y: =504
+            Width: =189
+            X: =992
+            Y: =510
             ZIndex: =16
 
     Group6 As group:
@@ -1107,37 +1107,37 @@ Screen_RequestorCreate As screen:
         ZIndex: =24
 
         Image2_1 As image:
-            Height: =70
+            Height: =49
             Image: =Office365Users.UserPhoto(User().Email)
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =70
+            Width: =60
             X: =930
-            Y: =580
+            Y: =601
             ZIndex: =17
 
         Label10_2 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =21
+            Height: =15
             Size: =11
             Text: =User().FullName
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =232
-            X: =1011
-            Y: =580
+            Width: =198
+            X: =999
+            Y: =601
             ZIndex: =18
 
         Label10_3 As label:
-            Height: =19
+            Height: =13
             Size: =11
             Text: =IfError(Office365Users.UserProfile(User().Email).JobTitle,"")
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =232
-            X: =1011
-            Y: =601
+            Width: =198
+            X: =999
+            Y: =616
             ZIndex: =19
 
     Group12 As group:
@@ -1148,26 +1148,26 @@ Screen_RequestorCreate As screen:
         ZIndex: =24
 
         Image2_2 As image:
-            Height: =70
+            Height: =49
             Image: =Office365Users.UserPhoto(varDirector.Email)
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =70
-            X: =930
-            Y: =685
+            Width: =60
+            X: =932
+            Y: =676
             ZIndex: =21
 
         Label10_4 As label:
             FontWeight: =FontWeight.Semibold
-            Height: =25
+            Height: =21
             Size: =11
             Text: =varDirector.DisplayName
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =94
-            X: =1011
+            Width: =186
+            X: =995
             Y: =685
             ZIndex: =22
 
@@ -1176,8 +1176,8 @@ Screen_RequestorCreate As screen:
             Size: =11
             Text: =Office365Users.UserProfile(varDirector.Email).JobTitle
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =232
-            X: =1011
+            Width: =186
+            X: =995
             Y: =706
             ZIndex: =23
 
@@ -1202,4 +1202,12 @@ Screen_RequestorCreate As screen:
         X: =1243
         Y: =693
         ZIndex: =26
+
+    Icon9_1 As icon.ArrowDown:
+        Height: =35
+        Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
+        Width: =59
+        X: =1026
+        Y: =650
+        ZIndex: =28
 
