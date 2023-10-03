@@ -9,6 +9,7 @@ Screen_RequestorCreate As screen:
         Fill: =RGBA(0,78,151,59)
         Font: =Font.Lato
         Height: =78
+        HoverFill: =ColorFade(RGBA(0,78,151,59), -20%)
         OnSelect: |
             =If(Len(TotalAmountCard.Text) >5,
             SubmitForm(Form1),
@@ -33,6 +34,7 @@ Screen_RequestorCreate As screen:
         Fill: =RGBA(221, 79, 14, 1)
         Font: =Font.Lato
         Height: =83
+        HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
         OnSelect: =Navigate(Screen_Requestor)
         Text: ="Back"
         Width: =267
@@ -42,11 +44,11 @@ Screen_RequestorCreate As screen:
 
     Button6 As button:
         BorderStyle: =BorderStyle.None
-        DisplayMode: =If(Form1.Mode = FormMode.Edit, DisplayMode.Edit, DisplayMode.Disabled)
-        Fill: =RGBA(255,0,0,59)
+        DisplayMode: =If(Form1.Mode = FormMode.New, DisplayMode.Edit, DisplayMode.Disabled)
+        Fill: =RGBA(255, 191, 0, 1)
         Font: =Font.Lato
         Height: =88
-        HoverFill: =ColorFade(RGBA(255,0,0,59), -20%)
+        HoverFill: =ColorFade(RGBA(255, 191, 0, 1), -20%)
         OnSelect: =ResetForm(Form1);NewForm(Form1)
         Text: ="Clear"
         Width: =267

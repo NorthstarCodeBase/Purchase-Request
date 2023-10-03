@@ -61,7 +61,6 @@
 
     Create As button:
         BorderStyle: =BorderStyle.None
-        Fill: =RGBA(0,78,151,59)
         Font: =Font.Lato
         Height: =46
         OnSelect: |-
