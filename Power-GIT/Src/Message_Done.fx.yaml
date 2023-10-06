@@ -6,8 +6,10 @@ Message_Done As screen:
     Icon2 As icon.Check:
         Height: =203
         Icon: =Icon.CheckBadge
-        Width: =202
-        X: =582
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =227.26
+        X: =654.75
         Y: =205
         ZIndex: =1
 
@@ -17,10 +19,12 @@ Message_Done As screen:
         Font: =Font.Lato
         FontWeight: =FontWeight.Bold
         Height: =224
-        Size: =36
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =40.50
         Text: ="Your PR is submitted."
-        Width: =926
-        X: =220
+        Width: =1041.75
+        X: =110.25
         Y: =369
         ZIndex: =2
 
@@ -29,8 +33,12 @@ Message_Done As screen:
         Duration: =2000
         Font: =Font.Lato
         OnTimerEnd: =Navigate(Screen_Main,ScreenTransition.UnCoverRight)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Visible: =false
-        X: =20
+        Width: =180.00
+        X: =22.50
         Y: =60
         ZIndex: =4
 

@@ -6,8 +6,10 @@ Message_PermissionIssue As screen:
         Fill: =RGBA(255, 255, 0, 1)
         Height: =170
         Icon: =Icon.Error
-        Width: =276
-        X: =519
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =310.50
+        X: =583.88
         Y: =165
         ZIndex: =1
 
@@ -16,10 +18,12 @@ Message_PermissionIssue As screen:
         Color: =RGBA(184, 0, 0, 1)
         Font: =Font.Lato
         Height: =224
-        Size: =36
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =40.50
         Text: ="Oop.... You are do not have permission, contact your administrator to get the help!"
-        Width: =1024
-        X: =189
+        Width: =1152.01
+        X: =212.63
         Y: =335
         ZIndex: =2
 
@@ -29,8 +33,12 @@ Message_PermissionIssue As screen:
         Font: =Font.Lato
         Height: =46
         OnSelect: =Navigate(Screen_Main)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Back"
-        X: =548
+        Width: =180.00
+        X: =616.50
         Y: =559
         ZIndex: =3
 

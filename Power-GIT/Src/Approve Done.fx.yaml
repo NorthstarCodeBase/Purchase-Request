@@ -6,8 +6,10 @@
     Icon2_1 As icon.Check:
         Height: =209
         Icon: =Icon.CheckBadge
-        Width: =297
-        X: =534
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =334.13
+        X: =600.74
         Y: =203
         ZIndex: =1
 
@@ -17,10 +19,12 @@
         Font: =Font.Lato
         FontWeight: =FontWeight.Bold
         Height: =97
-        Size: =36
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =40.50
         Text: ="Thanks for your dedication!"
-        Width: =923
-        X: =221
+        Width: =1038.38
+        X: =113.61999999999989
         Y: =490
         ZIndex: =2
 
@@ -29,8 +33,12 @@
         Duration: =2000
         Font: =Font.Lato
         OnTimerEnd: =Navigate(Screen_Main,ScreenTransition.UnCoverRight)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Visible: =false
-        X: =20
+        Width: =180.00
+        X: =22.50
         Y: =60
         ZIndex: =4
 
@@ -40,10 +48,12 @@
         Font: =Font.Lato
         FontWeight: =FontWeight.Bold
         Height: =97
-        Size: =36
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =40.50
         Text: ="Action Done"
-        Width: =923
-        X: =221
+        Width: =1038.38
+        X: =113.61999999999989
         Y: =412
         ZIndex: =5
 

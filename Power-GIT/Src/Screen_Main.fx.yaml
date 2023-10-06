@@ -8,67 +8,86 @@ Screen_Main As screen:
         Fill: =RGBA(0,78,151,59)
         Font: =Font.Lato
         Height: =69
-        Size: =36
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =40.50
         Text: ="PURCHASING CONTROL"
-        Width: =1365
+        Width: =1535.63
+        X: =0.00
         ZIndex: =1
 
     LoginUser_4 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
         Height: =33
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="User login: " & User().FullName
-        Width: =311
-        X: =1055
+        Width: =349.89
+        X: =1186.86
         Y: =2
         ZIndex: =5
 
     LoginDate_4 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="Date: " & Today()
-        Width: =311
-        X: =1055
+        Width: =349.89
+        X: =1186.86
         Y: =35
         ZIndex: =6
 
     Image1 As image:
         Height: =464
         Image: =Purchase
-        Width: =464
-        X: =116
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =522.00
+        X: =130.50
         Y: =88
         ZIndex: =8
 
     Label5_5 As label:
         Font: =Font.Lato
         Height: =25
-        Size: =9
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =10.13
         Text: ="version 1.0.0"
-        Width: =296
+        Width: =333.00
+        X: =0.00
         Y: =718
         ZIndex: =16
 
     Label5_6 As label:
         Font: =Font.Lato
         Height: =25
-        Size: =9
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =10.13
         Text: |-
             ="Last update: 19/Sep/2023"
-        Width: =296
+        Width: =333.00
+        X: =0.00
         Y: =743
         ZIndex: =17
 
     Label5_7 As label:
         Font: =Font.Lato
         Height: =36
-        Size: =9
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =10.13
         Text: |-
             ="Tech support: Hai.vu@northstar.vn;          Nguyet.Chu@northstar.vn"
-        Width: =398
-        X: =968
+        Width: =447.74
+        X: =1089.01
         Y: =732
         ZIndex: =18
 
@@ -86,19 +105,24 @@ Screen_Main As screen:
             Height: =58
             OnSelect: |-
                 =Launch("https://northstarprecision.sharepoint.com/sites/Northstarsystem")
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =16.86
             Text: ="User Guide"
-            Width: =405
-            X: =133
+            Width: =455.63
+            X: =149.63
             Y: =598
             ZIndex: =13
 
         Label5_4 As label:
             Align: =Align.Center
             Font: =Font.Lato
-            Size: =9
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =10.13
             Text: ="You can get user guide from here"
-            Width: =296
-            X: =175
+            Width: =333.00
+            X: =196.89
             Y: =558
             ZIndex: =14
 
@@ -106,8 +130,10 @@ Screen_Main As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =41
             Icon: =Icon.DocumentWithContent
-            Width: =56
-            X: =133
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =63.00
+            X: =149.63
             Y: =606
             ZIndex: =15
 
@@ -116,8 +142,10 @@ Screen_Main As screen:
         Height: =66
         Icon: =Icon.LogJournal
         OnSelect: =Navigate(LOG)
-        Width: =65
-        X: =1301
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =73.14
+        X: =1463.61
         ZIndex: =26
 
     Group14 As group:
@@ -155,9 +183,12 @@ Screen_Main As screen:
                         ScreenTransition.UnCover
                     )
                 );
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =16.86
             Text: ="Head of Department Approve"
-            Width: =405
-            X: =849
+            Width: =455.63
+            X: =955.13
             Y: =369
             ZIndex: =2
 
@@ -176,9 +207,12 @@ Screen_Main As screen:
                     )
                 );
                 Set(varMgr,2);
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =16.86
             Text: ="Head of Finance Approve"
-            Width: =405
-            X: =849
+            Width: =455.63
+            X: =955.13
             Y: =507
             ZIndex: =3
 
@@ -188,9 +222,12 @@ Screen_Main As screen:
             Font: =Font.Lato
             Height: =58
             OnSelect: =If(User().Email=varDirector.Email||User().Email=LookUp(PRROLE,ROLE="ADMIN1",PIC).Email||User().Email=LookUp(PRROLE,ROLE="ADMIN2",PIC).Email,Navigate(Screen_Approval,ScreenTransition.Cover),Navigate(Message_PermissionIssue,ScreenTransition.UnCover));Set(varMgr,3)
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =16.86
             Text: ="General Director Approve"
-            Width: =405
-            X: =849
+            Width: =455.63
+            X: =955.13
             Y: =645
             ZIndex: =4
 
@@ -200,58 +237,69 @@ Screen_Main As screen:
             Font: =Font.Lato
             Height: =53
             OnSelect: =Refresh(PRManagement);Navigate(Screen_Requestor,ScreenTransition.Cover)
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =16.86
             Text: ="Create New Request"
-            Width: =405
-            X: =849
+            Width: =455.63
+            X: =955.13
             Y: =236
             ZIndex: =7
 
         Label5 As label:
             Align: =Align.Center
             Font: =Font.Lato
-            Size: =9
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =10.13
             Text: ="Click here to view and create new Purchase Order"
-            Width: =296
-            X: =903
+            Width: =333.00
+            X: =1015.88
             Y: =196
             ZIndex: =9
 
         Label5_1 As label:
             Align: =Align.Center
             Font: =Font.Lato
-            Size: =9
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =10.13
             Text: ="Managers can click here to approve/reject PR"
-            Width: =296
-            X: =903
+            Width: =333.00
+            X: =1015.88
             Y: =329
             ZIndex: =10
 
         Label5_2 As label:
             Align: =Align.Center
             Font: =Font.Lato
-            Size: =9
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =10.13
             Text: ="Head of Finance can click here to approve/reject PR"
-            Width: =296
-            X: =904
+            Width: =333.00
+            X: =1017.00
             Y: =467
             ZIndex: =11
 
         Label5_3 As label:
             Align: =Align.Center
             Font: =Font.Lato
-            Size: =9
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =10.13
             Text: ="General Director can click here to approve/reject PR"
-            Width: =296
-            X: =905
+            Width: =333.00
+            X: =1018.13
             Y: =605
             ZIndex: =12
 
         Circle1 As circle:
             Fill: =RGBA(203, 102, 102, 1)
-            Height: =39
+            Height: =43.89
             Visible: =Value(Mrg_Noti.Text)
-            Width: =39
-            X: =1226
+            Width: =43.89
+            X: =1379.25
             Y: =349
             ZIndex: =19
 
@@ -260,7 +308,9 @@ Screen_Main As screen:
             Color: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
             Height: =23
-            Size: =20
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =22.50
             Text: |-
                 =CountRows(
                     Filter(
@@ -271,17 +321,17 @@ Screen_Main As screen:
                     )
                 )
             Visible: =Value(Mrg_Noti.Text)
-            Width: =39
-            X: =1226
+            Width: =43.89
+            X: =1379.25
             Y: =356
             ZIndex: =21
 
         Circle1_1 As circle:
             Fill: =RGBA(203, 102, 102, 1)
-            Height: =39
+            Height: =43.89
             Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
-            Width: =39
-            X: =1227
+            Width: =43.89
+            X: =1380.38
             Y: =492
             ZIndex: =22
 
@@ -290,7 +340,9 @@ Screen_Main As screen:
             Color: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
             Height: =23
-            Size: =20
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =22.50
             Text: |-
                 =CountRows(
                     Filter(
@@ -300,17 +352,17 @@ Screen_Main As screen:
                     )
                 )
             Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
-            Width: =39
-            X: =1227
+            Width: =43.89
+            X: =1380.38
             Y: =499
             ZIndex: =23
 
         Circle1_2 As circle:
             Fill: =RGBA(203, 102, 102, 1)
-            Height: =39
+            Height: =43.89
             Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
-            Width: =39
-            X: =1227
+            Width: =43.89
+            X: =1380.38
             Y: =629
             ZIndex: =24
 
@@ -319,7 +371,9 @@ Screen_Main As screen:
             Color: =RGBA(255, 255, 255, 1)
             Font: =Font.'Lato Black'
             Height: =23
-            Size: =20
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =22.50
             Text: |-
                 =CountRows(
                     Filter(
@@ -330,8 +384,8 @@ Screen_Main As screen:
                     )
                 )
             Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
-            Width: =39
-            X: =1227
+            Width: =43.89
+            X: =1380.38
             Y: =636
             ZIndex: =25
 
@@ -348,9 +402,12 @@ Screen_Main As screen:
             Font: =Font.Lato
             Height: =58
             OnSelect: =Navigate(Screen1)
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =16.86
             Text: ="Request Flow"
-            Width: =405
-            X: =133
+            Width: =455.63
+            X: =149.63
             Y: =678
             ZIndex: =27
 
@@ -358,10 +415,12 @@ Screen_Main As screen:
             Align: =Align.Center
             Font: =Font.Lato
             Height: =21
-            Size: =9
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =10.13
             Text: ="You can get PR FLow from here"
-            Width: =296
-            X: =175
+            Width: =333.00
+            X: =196.89
             Y: =660
             ZIndex: =28
 
@@ -369,8 +428,10 @@ Screen_Main As screen:
             Color: =RGBA(255, 255, 255, 1)
             Height: =41
             Icon: =Icon.Tray
-            Width: =56
-            X: =133
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =63.00
+            X: =149.63
             Y: =686
             ZIndex: =29
 

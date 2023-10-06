@@ -23,9 +23,12 @@ Screen_RequestorCreate As screen:
                 }
             ),*/
             Notify("Amount not right!!",NotificationType.Error))
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Submit"
-        Width: =271
-        X: =926
+        Width: =304.88
+        X: =847.12
         Y: =99
         ZIndex: =2
 
@@ -36,9 +39,12 @@ Screen_RequestorCreate As screen:
         Height: =83
         HoverFill: =ColorFade(RGBA(221, 79, 14, 1), -20%)
         OnSelect: =Navigate(Screen_Requestor)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Back"
-        Width: =267
-        X: =930
+        Width: =300.38
+        X: =851.62
         Y: =210
         ZIndex: =3
 
@@ -50,9 +56,12 @@ Screen_RequestorCreate As screen:
         Height: =88
         HoverFill: =ColorFade(RGBA(255, 191, 0, 1), -20%)
         OnSelect: =ResetForm(Form1);NewForm(Form1)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Clear"
-        Width: =267
-        X: =930
+        Width: =300.38
+        X: =851.62
         Y: =340
         ZIndex: =4
 
@@ -62,28 +71,37 @@ Screen_RequestorCreate As screen:
         Font: =Font.Lato
         FontWeight: =FontWeight.Semibold
         Height: =73
-        PaddingRight: =10
+        PaddingRight: =11.25
+        PaddingTop: =5.63
+        Size: =20.25
         Text: ="CREATE PURCHASING REQUEST"
-        Width: =Parent.Width
+        Width: =168.76
+        X: =0.00
         ZIndex: =5
 
     LoginUser_1 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
         Height: =33
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="User login: " & User().FullName
-        Width: =311
-        X: =1055
+        Width: =349.89
+        X: =802.11
         ZIndex: =6
 
     LoginDate_1 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="Date: " & Today()
-        Width: =311
-        X: =1055
+        Width: =349.89
+        X: =802.11
         Y: =33
         ZIndex: =7
 
@@ -96,7 +114,8 @@ Screen_RequestorCreate As screen:
         OnFailure: =Notify("Please fulfill all required data",NotificationType.Error)
         OnSuccess: =Navigate(Message_Done)
         SnapToColumns: =false
-        Width: =905
+        Width: =1018.13
+        X: =0.00
         Y: =80
         ZIndex: =8
 
@@ -110,8 +129,8 @@ Screen_RequestorCreate As screen:
             Height: =93
             Required: =true
             Update: =Value(TotalAmountCard.Text)
-            Width: =903
-            X: =0
+            Width: =1015.88
+            X: =0.00
             Y: =4
             ZIndex: =1
 
@@ -119,10 +138,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =379.35
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (TotalAmountCard.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -134,15 +156,17 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 Format: =TextFormat.Number
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
                 Visible: =false
-                Width: =270
-                X: |
-                    =240
+                Width: =303.75
+                X: =270.00
                 Y: =10
                 ZIndex: =2
 
@@ -153,12 +177,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =948.38
+                X: =33.75
                 Y: =83
                 ZIndex: =3
 
@@ -166,10 +191,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey9.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey9.Y
                 ZIndex: =4
 
@@ -178,19 +207,25 @@ Screen_RequestorCreate As screen:
                 BorderThickness: =1
                 Fill: =RGBA(255,255,255,1)
                 Font: =Font.Lato
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Text(Round(Value(TotalAmountCard.Text),2),"[$-en-US]0,000") & " VND"
-                Width: =270
-                X: =240
+                Width: =303.75
+                X: =270.00
                 Y: =10
                 ZIndex: =5
 
             Label4_3 As label:
                 Font: =Font.Lato
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: |-
                     =If(Len(Text(Round(Value(TotalAmountCard.Text)/23000,2))) > 6,
                     Text(Round(Value(TotalAmountCard.Text) /23000,2),"[$-en-US]0,000.00") & " $",Text(Round(Value(TotalAmountCard.Text) /23000,2),"[$-en-US]0.00") & " $")
-                Width: =369
-                X: =240
+                Width: =415.11
+                X: =270.00
                 Y: =50
                 ZIndex: =6
 
@@ -205,9 +240,8 @@ Screen_RequestorCreate As screen:
             Required: |
                 =true
             Visible: =false
-            Width: |
-                =950
-            X: =0
+            Width: =1068.75
+            X: =0.00
             Y: =10
             ZIndex: =1
 
@@ -215,10 +249,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =400.50
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue13.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -228,11 +265,12 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 Height: =27
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =14.64
                 Text: =Parent.Default
-                Width: =(Parent.Width - 60) * 0.6
-                X: =DataCardKey13.X + DataCardKey13.Width
+                Width: =600.74
+                X: =434.25
                 Y: =10
                 ZIndex: =2
 
@@ -248,18 +286,21 @@ Screen_RequestorCreate As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue2.Selected
-            Width: =905
-            X: =0
+            Width: =1018.13
+            X: =0.00
             Y: =11
             ZIndex: =1
 
             DataCardKey10 As label:
                 AutoHeight: =true
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =380.25
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue2.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -270,13 +311,16 @@ Screen_RequestorCreate As screen:
                 DisplayFields: =["DisplayName","Email","Picture"]
                 Items: =Choices([@PRManagement].'Line Manager')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 SearchFields: =["DisplayName"]
                 SearchItems: =Choices(PRManagement.'Line Manager',DataCardValue2.SearchText)
                 SelectMultiple: =false
+                Size: =14.64
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
-                Width: =600
-                X: =241
+                Width: =675.00
+                X: =271.13
                 Y: =5
                 ZIndex: =2
 
@@ -286,22 +330,27 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =950.63
+                X: =33.75
                 Y: =DataCardValue2.Y + DataCardValue2.Height
                 ZIndex: =3
 
             StarVisible10 As label:
                 Align: =Align.Center
                 Height: =DataCardKey10.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey10.Y
                 ZIndex: =4
 
@@ -316,8 +365,8 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "Title")
             Required: =true
             Update: =DataCardValue1.Text
-            Width: =903
-            X: =0
+            Width: =1015.88
+            X: =0.00
             Y: =0
             ZIndex: =9
 
@@ -325,10 +374,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =379.35
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue1.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -340,14 +392,16 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =600
-                X: |
-                    =240
+                Width: =675.00
+                X: =270.00
                 Y: =5
                 ZIndex: =2
 
@@ -358,12 +412,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =948.38
+                X: =33.75
                 Y: =DataCardValue1.Y + DataCardValue1.Height
                 ZIndex: =3
 
@@ -371,10 +426,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey1.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey1.Y
                 ZIndex: =4
 
@@ -388,8 +447,8 @@ Screen_RequestorCreate As screen:
             Height: =50
             Required: =true
             Update: =Value(QuantityCard.Text)
-            Width: =428
-            X: =2
+            Width: =481.50
+            X: =2.25
             Y: =0
             ZIndex: =9
 
@@ -397,10 +456,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =165.61
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (QuantityCard.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -413,14 +475,16 @@ Screen_RequestorCreate As screen:
                 Format: =TextFormat.Number
                 Height: =35
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =155
-                X: |
-                    =240
+                Width: =174.38
+                X: =270.00
                 Y: =10
                 ZIndex: =2
 
@@ -431,12 +495,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =414.01
+                X: =33.75
                 Y: =QuantityCard.Y + QuantityCard.Height
                 ZIndex: =3
 
@@ -444,10 +509,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey2.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey2.Y
                 ZIndex: =4
 
@@ -462,8 +531,8 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_3")
             Required: =true
             Update: =Dropdown1.Selected.Value
-            Width: =450
-            X: =3
+            Width: =506.26
+            X: =3.38
             Y: =0
             ZIndex: =9
 
@@ -471,10 +540,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =72
+                Width: =81.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -485,12 +557,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =438.75
+                X: =33.75
                 Y: =Dropdown1.Y + Dropdown1.Height
                 ZIndex: =3
 
@@ -498,10 +571,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey3.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey3.Y
                 ZIndex: =4
 
@@ -510,8 +587,11 @@ Screen_RequestorCreate As screen:
                 DisplayMode: =Parent.DisplayMode
                 Font: =Font.Lato
                 Items: =["Pcs","Box","Set"]
-                Width: =111
-                X: =102
+                PaddingRight: =11.25
+                PaddingTop: =11.25
+                Size: =14.64
+                Width: =124.88
+                X: =114.75
                 Y: =7
                 ZIndex: =5
 
@@ -526,8 +606,8 @@ Screen_RequestorCreate As screen:
             MaxLength: =255
             Required: =true
             Update: =If(varSup,NewSupplierText.Text, SupplierdropDown.Selected.Value)
-            Width: =903
-            X: =1
+            Width: =1015.88
+            X: =1.13
             Y: =2
             ZIndex: =9
 
@@ -535,10 +615,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =166
+                Width: =186.75
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (SupplierdropDown.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -549,12 +632,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =948.38
+                X: =33.75
                 Y: =SupplierdropDown.Y + SupplierdropDown.Height
                 ZIndex: =2
 
@@ -562,10 +646,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey5.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey5.Y
                 ZIndex: =3
 
@@ -578,26 +666,32 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 InputTextPlaceholder: ="Find Supplier name"
                 Items: =If(Form1.Mode = FormMode.View, [varItem.Supplier],Distinct(PRManagement,Supplier))
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 SearchFields: =["Value"]
                 SearchItems: =Search(If(Form1.Mode = FormMode.View, [varItem.Supplier],Distinct(PRManagement,Supplier)),SupplierdropDown.SearchText,"Value")
                 SelectMultiple: =false
+                Size: =14.64
                 Visible: |
                     =!varSup
-                Width: =457
-                X: =240
+                Width: =514.13
+                X: =270.00
                 Y: =6
                 ZIndex: =4
 
             NewSupplierText As text:
                 Default: =Parent.Default
                 Font: =Font.Lato
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Visible: =varSup
-                Width: =445
-                X: =240
+                Width: =500.63
+                X: =270.00
                 Y: =6
                 ZIndex: =5
 
@@ -606,11 +700,13 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 Height: =53
                 OnSelect: =If(varSup =  false, Set(varSup, true), Set(varSup, false))
-                Size: =13
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =If(!varSup,"New Supplier", "Existed Supplier")
                 Visible: =If(Form1.Mode = FormMode.New,true, false)
-                Width: =112
-                X: =734
+                Width: =126.00
+                X: =825.75
                 ZIndex: =6
 
         Unit_Price_DataCard1 As typedDataCard.textualEditCard:
@@ -624,8 +720,8 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_4")
             Required: =true
             Update: =PriceCard.Text
-            Width: =903
-            X: =0
+            Width: =1015.88
+            X: =0.00
             Y: =3
             ZIndex: =9
 
@@ -633,10 +729,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName & " (VND)"
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =379.35
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (PriceCard.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -653,14 +752,16 @@ Screen_RequestorCreate As screen:
                     =Set(varAMinUS,
                     Label4_3.Text)
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =270
-                X: |
-                    =240
+                Width: =303.75
+                X: =270.00
                 Y: =10
                 ZIndex: =2
 
@@ -671,12 +772,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =948.38
+                X: =33.75
                 Y: =PriceCard.Y + PriceCard.Height
                 ZIndex: =3
 
@@ -684,18 +786,25 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey4.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey4.Y
                 ZIndex: =4
 
             Label4 As label:
                 Font: =Font.Lato
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Text(Round(Value(PriceCard.Text),2),"[$-en-US]0,000") & " VND"
-                Width: =360
-                X: =518
+                Width: =405.00
+                X: =582.75
                 Y: =10
                 ZIndex: =5
 
@@ -710,8 +819,8 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_8")
             Required: =true
             Update: =DataCardValue6.Text
-            Width: =903
-            X: =1
+            Width: =1015.88
+            X: =1.13
             Y: =5
             ZIndex: =9
 
@@ -719,10 +828,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =379.35
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue6.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -736,15 +848,16 @@ Screen_RequestorCreate As screen:
                 MaxLength: =Parent.MaxLength
                 Mode: =TextMode.MultiLine
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: |
-                    =600
-                X: |
-                    =240
+                Width: =675.00
+                X: =270.00
                 Y: =10
                 ZIndex: =2
 
@@ -755,12 +868,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =948.38
+                X: =33.75
                 Y: =DataCardValue6.Y + DataCardValue6.Height
                 ZIndex: =3
 
@@ -768,10 +882,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey6.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey6.Y
                 ZIndex: =4
 
@@ -787,9 +905,8 @@ Screen_RequestorCreate As screen:
             Required: |
                 =true
             Update: =DataCardValue7.Text
-            Width: |
-                =950
-            X: =0
+            Width: =1068.75
+            X: =0.00
             Y: =7
             ZIndex: =9
 
@@ -797,10 +914,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =400.50
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue7.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -813,15 +933,16 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: |
-                    =600
-                X: |
-                    =240
+                Width: =675.00
+                X: =270.00
                 Y: =7
                 ZIndex: =2
 
@@ -832,12 +953,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =1001.24
+                X: =33.75
                 Y: =DataCardValue7.Y + DataCardValue7.Height
                 ZIndex: =3
 
@@ -845,10 +967,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey7.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey7.Y
                 ZIndex: =4
 
@@ -864,9 +990,8 @@ Screen_RequestorCreate As screen:
             Required: |
                 =true
             Update: =DataCardValue8.Text
-            Width: |
-                =950
-            X: =0
+            Width: =1068.75
+            X: =0.00
             Y: =8
             ZIndex: =9
 
@@ -875,10 +1000,13 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 FontWeight: =FontWeight.Semibold
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =400.50
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue8.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -891,14 +1019,16 @@ Screen_RequestorCreate As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: |
-                    =600
-                X: =240
+                Width: =675.00
+                X: =270.00
                 Y: =7
                 ZIndex: =2
 
@@ -909,12 +1039,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =1001.24
+                X: =33.75
                 Y: =DataCardValue8.Y + DataCardValue8.Height
                 ZIndex: =3
 
@@ -922,10 +1053,14 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey8.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey8.Y
                 ZIndex: =4
 
@@ -939,8 +1074,8 @@ Screen_RequestorCreate As screen:
             Height: =141
             Required: =true
             Update: =DataCardValue12.Attachments
-            Width: =900
-            X: =0
+            Width: =1012.50
+            X: =0.00
             Y: =9
             ZIndex: =9
 
@@ -948,10 +1083,13 @@ Screen_RequestorCreate As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =(Parent.Width - 60) * 0.4
+                Width: =378.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10 + (DataCardValue12.Height / 2) - (Self.Height / 2)
                 ZIndex: =1
 
@@ -964,12 +1102,12 @@ Screen_RequestorCreate As screen:
                 Items: =Parent.Default
                 PaddingBottom: =5
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PaddingRight: =5
-                PaddingTop: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: |
-                    =600
-                X: =240
+                Width: =675.00
+                X: =270.00
                 Y: =10
                 ZIndex: =2
 
@@ -980,12 +1118,13 @@ Screen_RequestorCreate As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =945.00
+                X: =33.75
                 Y: =DataCardValue12.Y + DataCardValue12.Height
                 ZIndex: =3
 
@@ -993,20 +1132,27 @@ Screen_RequestorCreate As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey12.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey12.Y
                 ZIndex: =4
 
     Label8_3 As label:
         Height: =41
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="Created Date: "  & varItem.Created
         Visible: =If(Form1.Mode = FormMode.New, false, true)
-        Width: =351
-        X: =930
+        Width: =394.88
+        X: =757.12
         Y: =482
         ZIndex: =12
 
@@ -1021,42 +1167,50 @@ Screen_RequestorCreate As screen:
             Fill: =RGBA(227, 234, 243, 1)
             Height: =286
             Visible: =If(Form1.Mode = FormMode.New, false, true)
-            Width: =436
-            X: =930
+            Width: =490.50
+            X: =716
             Y: =482
             ZIndex: =9
 
         Label8_2 As label:
             Height: =206
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: |-
                 =If(
                 varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
             VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form1.Mode = FormMode.New, false, true)
-            Width: =436
-            X: =930
+            Width: =490.50
+            X: =716
             Y: =562
             ZIndex: =10
 
         Label9_1 As label:
             Font: =Font.'Lato Black'
             Height: =39
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: |-
                 ="Approve Log:"
             Visible: =If(Form1.Mode = FormMode.New, false, true)
-            Width: =121
-            X: =930
+            Width: =136.14
+            X: =716
             Y: =523
             ZIndex: =11
 
     Label10_6 As label:
         FontWeight: =FontWeight.Bold
         Height: =44
-        Size: =11
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =12.39
         Text: =varItem.'Manager Confirmation'.Value
         Visible: =If(Form1.Mode = FormMode.New, true, false)
-        Width: =111
-        X: =1243
+        Width: =124.88
+        X: =1027.12
         Y: =491
         ZIndex: =24
 
@@ -1070,34 +1224,40 @@ Screen_RequestorCreate As screen:
         Image2 As image:
             Height: =62
             Image: =Office365Users.UserPhoto(varManager.Email)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =57
-            X: =926
+            Width: =64.13
+            X: =881.01
             Y: =491
             ZIndex: =14
 
         Label10 As label:
             FontWeight: =FontWeight.Semibold
             Height: =19
-            Size: =11
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
             Text: =varManager.DisplayName
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =205
-            X: =992
+            Width: =230.61
+            X: =881.01
             Y: =491
             ZIndex: =15
 
         Label10_1 As label:
             Height: =43
-            Size: =11
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
             Text: =Office365Users.UserProfile(varManager.Email).JobTitle
             Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =189
-            X: =992
+            Width: =212.63
+            X: =881.01
             Y: =510
             ZIndex: =16
 
@@ -1111,34 +1271,40 @@ Screen_RequestorCreate As screen:
         Image2_1 As image:
             Height: =49
             Image: =Office365Users.UserPhoto(User().Email)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =60
-            X: =930
+            Width: =67.50
+            X: =885.01
             Y: =601
             ZIndex: =17
 
         Label10_2 As label:
             FontWeight: =FontWeight.Semibold
             Height: =15
-            Size: =11
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
             Text: =User().FullName
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =198
-            X: =999
+            Width: =222.75
+            X: =885.01
             Y: =601
             ZIndex: =18
 
         Label10_3 As label:
             Height: =13
-            Size: =11
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
             Text: =IfError(Office365Users.UserProfile(User().Email).JobTitle,"")
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =198
-            X: =999
+            Width: =222.75
+            X: =885.01
             Y: =616
             ZIndex: =19
 
@@ -1152,64 +1318,76 @@ Screen_RequestorCreate As screen:
         Image2_2 As image:
             Height: =49
             Image: =Office365Users.UserPhoto(varDirector.Email)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
             RadiusBottomLeft: =50
             RadiusBottomRight: =50
             RadiusTopLeft: =50
             RadiusTopRight: =50
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =60
-            X: =932
+            Width: =67.50
+            X: =902.99
             Y: =676
             ZIndex: =21
 
         Label10_4 As label:
             FontWeight: =FontWeight.Semibold
             Height: =21
-            Size: =11
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
             Text: =varDirector.DisplayName
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =186
-            X: =995
+            Width: =209.25
+            X: =902.99
             Y: =685
             ZIndex: =22
 
         Label10_5 As label:
             Height: =19
-            Size: =11
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
             Text: =Office365Users.UserProfile(varDirector.Email).JobTitle
             Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =186
-            X: =995
+            Width: =209.25
+            X: =902.99
             Y: =706
             ZIndex: =23
 
     Label10_7 As label:
         FontWeight: =FontWeight.Bold
         Height: =44
-        Size: =11
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =12.39
         Text: =varItem.'Finance Confirmation'.Value
         Visible: =If(Form1.Mode = FormMode.New, true, false)
-        Width: =111
-        X: =1243
+        Width: =124.88
+        X: =1027.12
         Y: =588
         ZIndex: =25
 
     Label10_8 As label:
         FontWeight: =FontWeight.Bold
         Height: =44
-        Size: =11
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =12.39
         Text: =varItem.'GD Confirmation'.Value
         Visible: =If(Form1.Mode = FormMode.New, true, false)
-        Width: =111
-        X: =1243
+        Width: =124.88
+        X: =1027.12
         Y: =693
         ZIndex: =26
 
     Icon9_1 As icon.ArrowDown:
         Height: =35
+        PaddingRight: =0.00
+        PaddingTop: =0.00
         Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-        Width: =59
-        X: =1026
+        Width: =66.38
+        X: =1085.62
         Y: =650
         ZIndex: =28
 

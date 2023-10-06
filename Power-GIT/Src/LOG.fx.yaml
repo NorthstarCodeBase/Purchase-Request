@@ -6,18 +6,24 @@ LOG As screen:
         Fill: =RGBA(0, 78, 151, 1)
         Font: =Font.'Lato Black'
         Height: =65
-        Size: =20
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =22.50
         Text: ="LOG"
-        Width: =1366
+        Width: =1536.75
+        X: =0.00
         ZIndex: =1
 
     Label12 As label:
         BorderThickness: =1
         Fill: =RGBA(237, 237, 237, 1)
         Height: =48
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: ="Initial Version"
-        Width: =1226
-        X: =140
+        Width: =1379.25
+        X: =157.50
         Y: =113
         ZIndex: =2
 
@@ -25,8 +31,12 @@ LOG As screen:
         BorderThickness: =1
         Fill: =RGBA(237, 237, 237, 1)
         Height: =48
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: ="2023/09/28"
-        Width: =140
+        Width: =157.50
+        X: =0.00
         Y: =113
         ZIndex: =3
 
@@ -34,8 +44,12 @@ LOG As screen:
         BorderThickness: =1
         Fill: =RGBA(237, 237, 237, 1)
         Height: =48
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: ="Date"
-        Width: =140
+        Width: =157.50
+        X: =0.00
         Y: =65
         ZIndex: =4
 
@@ -43,9 +57,12 @@ LOG As screen:
         BorderThickness: =1
         Fill: =RGBA(237, 237, 237, 1)
         Height: =48
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: ="Update"
-        Width: =1226
-        X: =140
+        Width: =1379.25
+        X: =157.50
         Y: =65
         ZIndex: =5
 
@@ -54,5 +71,9 @@ LOG As screen:
         Fill: =RGBA(0, 78, 151, 1)
         Icon: =Icon.BackArrow
         OnSelect: =Back() 
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =72.00
+        X: =0.00
         ZIndex: =6
 

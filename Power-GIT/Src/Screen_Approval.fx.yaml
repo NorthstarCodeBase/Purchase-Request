@@ -46,7 +46,8 @@
         TemplatePadding: =0
         TemplateSize: =60
         Visible: =If(CountRows(Gallery1.AllItems) = 0 , false, true)
-        Width: =1366
+        Width: =1536.75
+        X: =0.00
         Y: =214
         ZIndex: =1
 
@@ -58,12 +59,12 @@
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =13
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =14.64
             Text: =ThisItem.ID
-            Width: |
-                =90
+            Width: =101.25
+            X: =0.00
             ZIndex: =1
 
         TicketTitle As label:
@@ -72,12 +73,12 @@
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =13
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =14.64
             Text: =ThisItem.Title
-            Width: =216
-            X: =Separater1.X+5
+            Width: =243.00
+            X: =106.89
             ZIndex: =2
 
         Requester As label:
@@ -87,12 +88,12 @@
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =13
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =14.64
             Text: =ThisItem.'Created By'.DisplayName
-            Width: =165
-            X: =507
+            Width: =185.63
+            X: =570.36
             Y: =1
             ZIndex: =3
 
@@ -105,18 +106,19 @@
                 Navigate(Screen_AppFunction)
             PaddingBottom: =10
             PaddingLeft: =10
-            PaddingRight: =10
-            PaddingTop: =10
+            PaddingRight: =11.25
+            PaddingTop: =11.25
             TabIndex: =0
             Tooltip: ="View item details"
-            Width: =60
-            X: =1306
+            Width: =67.50
+            X: =1469.25
             ZIndex: =4
 
         Separatorw As rectangle:
             Height: =1
             OnSelect: =Select(Parent)
-            Width: =Parent.TemplateWidth
+            Width: =1536.75
+            X: =0.00
             Y: =Parent.TemplateHeight - 1
             ZIndex: =5
 
@@ -127,40 +129,40 @@
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =13
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =14.64
             Text: =Text(Round(Value(ThisItem.'Total Amount'),2),"[$-en-US]0,000") & "      VND  "
-            Width: =222
-            X: =677
+            Width: =249.75
+            X: =761.63
             ZIndex: =6
 
         Separator2 As rectangle:
             Height: =60
             OnSelect: =Select(Parent)
-            Width: =2
-            X: =TicketTitle.X +TicketTitle.Width
+            Width: =2.25
+            X: =349.89
             ZIndex: =7
 
         Separater1 As rectangle:
             Height: =60
             OnSelect: =Select(Parent)
-            Width: =2
-            X: =Title3.Width
+            Width: =2.25
+            X: =101.25
             ZIndex: =8
 
         Separator3 As rectangle:
             Height: =60
             OnSelect: =Select(Parent)
-            Width: =2
-            X: =Requester.X +Requester.Width
+            Width: =2.25
+            X: =755.99
             ZIndex: =9
 
         Separator4 As rectangle:
             Height: =60
             OnSelect: =Select(Parent)
-            Width: =2
-            X: =GL1_Money.X +GL1_Money.Width
+            Width: =2.25
+            X: =1011.38
             ZIndex: =10
 
         GL1_Dept As label:
@@ -169,19 +171,20 @@
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =17.99
             Text: =ThisItem.Department
-            Width: =187
-            X: =313
+            Width: =210.38
+            X: =352.14
             Y: =1
             ZIndex: =11
 
         Separator4_1 As rectangle:
             Height: =60
             OnSelect: =Select(Parent)
-            Width: =2
-            X: =GL1_Dept.X +GL1_Dept.Width
+            Width: =2.25
+            X: =562.50
             ZIndex: =12
 
         GL1_Dept_1 As label:
@@ -190,12 +193,12 @@
             OnSelect: =Select(Parent)
             PaddingBottom: =0
             PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =13
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =14.64
             Text: =ThisItem.Purpose
-            Width: =405
-            X: =901
+            Width: =455.63
+            X: =1013.63
             ZIndex: =13
 
     Title1_2 As label:
@@ -204,28 +207,37 @@
         Fill: =RGBA(0,78,151,59)
         Font: =Font.Lato
         Height: =73
-        PaddingRight: =10
+        PaddingRight: =11.25
+        PaddingTop: =5.63
+        Size: =20.25
         Text: ="PURCHASING REQUEST MANAGEMENT"
-        Width: =Parent.Width
+        Width: =168.76
+        X: =0.00
         ZIndex: =2
 
     LoginUser_2 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
         Height: =33
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="User login: " & User().FullName
-        Width: =311
-        X: =1040
+        Width: =349.89
+        X: =1170.00
         ZIndex: =8
 
     LoginDate_2 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="Date: " & Today()
-        Width: =311
-        X: =1040
+        Width: =349.89
+        X: =1170.00
         Y: =33
         ZIndex: =9
 
@@ -235,8 +247,12 @@
         Font: =Font.Lato
         Height: =46
         OnSelect: =Navigate(Screen_Main,ScreenTransition.UnCoverRight)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Back"
-        X: =1191
+        Width: =180.00
+        X: =1339.86
         Y: =112
         ZIndex: =10
 
@@ -246,9 +262,12 @@
         Font: =Font.Lato
         Height: =47
         OnSelect: =Set(varStatus, false)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Waiting approve"
-        Width: =237
-        X: =887
+        Width: =266.63
+        X: =997.89
         Y: =111
         ZIndex: =11
 
@@ -259,9 +278,12 @@
         Font: =Font.Lato
         Height: =46
         OnSelect: =Set(varStatus, true)
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Show ALL"
-        Width: =137
-        X: =684
+        Width: =154.13
+        X: =769.50
         Y: =112
         ZIndex: =13
 
@@ -271,17 +293,22 @@
         Font: =Font.Arial
         FontWeight: =FontWeight.Bold
         Height: =154
-        Size: =40
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =45.01
         Text: =If(CountRows(Gallery1.AllItems) = 0 , "NO ITEMS TO APPROVE", Blank())
-        Width: =788
-        X: =289
+        Width: =886.50
+        X: =325.11
         Y: =400
         ZIndex: =20
 
     Icon3 As icon.Reload:
         Icon: =Icon.Reload
         OnSelect: =Refresh(PRManagement)
-        X: =13
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =72.00
+        X: =14.64
         Y: =4
         ZIndex: =21
 
@@ -296,10 +323,13 @@
             Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =22
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: |-
                 ="PR ID: "
-            Width: =70
-            X: =13
+            Width: =78.74
+            X: =14.64
             Y: =93
             ZIndex: =4
 
@@ -307,9 +337,12 @@
             Default: =""
             Font: =Font.Lato
             Format: =TextFormat.Number
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             Reset: =varStatus
-            Width: =107
-            X: =13
+            Size: =14.64
+            Width: =120.38
+            X: =14.64
             Y: =115
             ZIndex: =5
 
@@ -325,10 +358,13 @@
             IsSearchable: =false
             Items: =Distinct(PRManagement,Department)
             NoSelectionText: ="Blank"
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             SearchFields: =["Value"]
             SearchItems: =[]
-            Width: =184
-            X: =185
+            Size: =14.64
+            Width: =207.00
+            X: =208.13
             Y: =115
             ZIndex: =22
 
@@ -336,9 +372,12 @@
             Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =22
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: ="Department "
-            Width: =184
-            X: =185
+            Width: =207.00
+            X: =208.13
             Y: =93
             ZIndex: =23
 
@@ -354,10 +393,13 @@
             IsSearchable: =false
             Items: =Distinct(PRManagement,'Created By'.DisplayName)
             NoSelectionText: ="Blank"
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             SearchFields: =["Value"]
             SearchItems: =[]
-            Width: =184
-            X: =435
+            Size: =14.64
+            Width: =207.00
+            X: =489.38
             Y: =115
             ZIndex: =24
 
@@ -365,10 +407,13 @@
             Font: =Font.Lato
             FontWeight: =FontWeight.Semibold
             Height: =22
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: |-
                 ="Created by:"
-            Width: =184
-            X: =434
+            Width: =207.00
+            X: =488.25
             Y: =93
             ZIndex: =25
 
@@ -386,15 +431,18 @@
             Font: =Font.Lato
             Height: =46
             OnSelect: =
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =16.86
             Text: |-
                 ="ID
                 "
-            Width: |
-                =90
+            Width: =101.25
+            X: =0.00
             Y: =168
             ZIndex: =14
 
@@ -405,15 +453,18 @@
             Font: =Font.Lato
             Height: =46
             OnSelect: =
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =16.86
             Text: |-
                 ="Title
                 "
-            Width: =226
-            X: =89
+            Width: =254.25
+            X: =100.13
             Y: =168
             ZIndex: =15
 
@@ -424,15 +475,18 @@
             Font: =Font.Lato
             Height: =46
             OnSelect: =
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =16.86
             Text: |-
                 ="Requester
                 "
-            Width: =169
-            X: =501
+            Width: =190.13
+            X: =563.63
             Y: =168
             ZIndex: =16
 
@@ -443,15 +497,18 @@
             Font: =Font.Lato
             Height: =46
             OnSelect: =
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =16.86
             Text: |-
                 ="Amount
                 "
-            Width: =229
-            X: =669
+            Width: =257.64
+            X: =752.64
             Y: =168
             ZIndex: =17
 
@@ -462,15 +519,18 @@
             Font: =Font.Lato
             Height: =46
             OnSelect: =
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =16.86
             Text: |-
                 ="Department
                 "
-            Width: =188
-            X: =314
+            Width: =211.50
+            X: =353.26
             Y: =168
             ZIndex: =18
 
@@ -481,15 +541,18 @@
             Font: =Font.Lato
             Height: =46
             OnSelect: =
+            PaddingRight: =5.63
+            PaddingTop: =5.63
             RadiusBottomLeft: =0
             RadiusBottomRight: =0
             RadiusTopLeft: =0
             RadiusTopRight: =0
+            Size: =16.86
             Text: |-
                 ="Purpose
                 "
-            Width: =468
-            X: =898
+            Width: =526.50
+            X: =1010.25
             Y: =168
             ZIndex: =19
 
@@ -497,7 +560,8 @@
             BorderColor: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =46
-            Width: =1366
+            Width: =1536.75
+            X: =0.00
             Y: =168
             ZIndex: =26
 

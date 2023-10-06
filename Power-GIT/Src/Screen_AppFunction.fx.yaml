@@ -11,9 +11,12 @@ Screen_AppFunction As screen:
         OnSelect: |-
             =If(Param("startscreen") = "approvalscreen",Navigate(Screen_Main),
             Navigate(Screen_Approval))
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Back"
-        Width: =267
-        X: =1046
+        Width: =300.38
+        X: =851.62
         Y: =414
         ZIndex: =3
 
@@ -23,28 +26,37 @@ Screen_AppFunction As screen:
         Font: =Font.Lato
         FontWeight: =FontWeight.Semibold
         Height: =73
-        PaddingRight: =10
+        PaddingRight: =11.25
+        PaddingTop: =5.63
+        Size: =20.25
         Text: ="CHECK FOR APPROVE / REJECT"
-        Width: =Parent.Width
+        Width: =168.76
+        X: =0.00
         ZIndex: =5
 
     LoginUser_3 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
         Height: =33
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="User login: " & User().FullName
-        Width: =311
-        X: =1055
+        Width: =349.89
+        X: =802.11
         ZIndex: =6
 
     LoginDate_3 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="Date: " & Today()
-        Width: =311
-        X: =1055
+        Width: =349.89
+        X: =802.11
         Y: =33
         ZIndex: =7
 
@@ -99,9 +111,12 @@ Screen_AppFunction As screen:
                 }
             );
             Navigate('Approve Done')
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Approve"
-        Width: =260
-        X: =1046
+        Width: =292.49
+        X: =859.51
         Y: =180
         ZIndex: =9
 
@@ -157,9 +172,12 @@ Screen_AppFunction As screen:
             );
             Navigate(Message_Done)
             */
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =16.86
         Text: ="Reject"
-        Width: =260
-        X: =1046
+        Width: =292.49
+        X: =859.51
         Y: =262
         ZIndex: =10
 
@@ -172,8 +190,8 @@ Screen_AppFunction As screen:
         NumberOfColumns: =2
         OnSuccess: =Notify("Approved Done",NotificationType.Success)
         SnapToColumns: =false
-        Width: =937
-        X: =70
+        Width: =1054.13
+        X: =78.75
         Y: =73
         ZIndex: =12
 
@@ -188,8 +206,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "Title")
             Required: =false
             Update: =DataCardValue5.Text
-            Width: =468
-            X: =0
+            Width: =526.50
+            X: =0.00
             Y: =0
             ZIndex: =13
 
@@ -197,10 +215,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -212,13 +233,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey15.Y + DataCardKey15.Height + 5
                 ZIndex: =2
 
@@ -229,12 +253,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue5.Y + DataCardValue5.Height
                 ZIndex: =3
 
@@ -242,17 +267,24 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey15.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey15.Y
                 ZIndex: =4
 
             Icon5 As icon.Document:
                 Height: =44
                 Icon: =Icon.Document
-                Width: =30
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Width: =33.75
+                X: =0.00
                 ZIndex: =5
 
         "'Total Amount_DataCard2' As typedDataCard.numberEditCard":
@@ -265,8 +297,8 @@ Screen_AppFunction As screen:
             Height: =104
             Required: =false
             Update: =Value(DataCardValue21.Text)
-            Width: =468
-            X: =1
+            Width: =526.50
+            X: =1.13
             Y: =0
             ZIndex: =13
 
@@ -274,10 +306,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =41
+                X: =46.11
                 Y: =15
                 ZIndex: =1
 
@@ -291,13 +326,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 Format: =TextFormat.Number
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =183
-                X: =40
+                Width: =205.88
+                X: =45.01
                 Y: =53
                 ZIndex: =2
 
@@ -308,12 +346,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue21.Y + DataCardValue21.Height
                 ZIndex: =3
 
@@ -321,19 +360,26 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey26.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey26.Y
                 ZIndex: =4
 
             Label7 As label:
                 Align: =Align.Center
                 Font: =Font.Lato
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="VND"
-                Width: =55
-                X: =158
+                Width: =61.88
+                X: =177.75
                 Y: =53
                 ZIndex: =5
 
@@ -347,13 +393,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 Format: =TextFormat.Number
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =139
-                X: =254
+                Width: =156.38
+                X: =285.75
                 Y: =53
                 ZIndex: =6
 
@@ -361,9 +410,12 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =39
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="$"
-                Width: =42
-                X: =351
+                Width: =47.24
+                X: =394.88
                 Y: =55
                 ZIndex: =7
 
@@ -378,8 +430,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_8")
             Required: =false
             Update: =DataCardValue15.Text
-            Width: =468
-            X: =0
+            Width: =526.50
+            X: =0.00
             Y: =1
             ZIndex: =13
 
@@ -387,10 +439,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -404,13 +459,16 @@ Screen_AppFunction As screen:
                 MaxLength: =Parent.MaxLength
                 Mode: =TextMode.MultiLine
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey20.Y + DataCardKey20.Height + 5
                 ZIndex: =2
 
@@ -421,12 +479,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue15.Y + DataCardValue15.Height
                 ZIndex: =3
 
@@ -434,10 +493,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey20.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey20.Y
                 ZIndex: =4
 
@@ -451,8 +514,8 @@ Screen_AppFunction As screen:
             Height: =131
             Required: =false
             Update: =DataCardValue23.Attachments
-            Width: =468
-            X: =1
+            Width: =526.50
+            X: =1.13
             Y: =1
             ZIndex: =13
 
@@ -460,10 +523,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -476,11 +542,12 @@ Screen_AppFunction As screen:
                 Items: =Parent.Default
                 PaddingBottom: =5
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
-                PaddingRight: =5
-                PaddingTop: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey28.Y + DataCardKey28.Height + 5
                 ZIndex: =2
 
@@ -491,12 +558,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue23.Y + DataCardValue23.Height
                 ZIndex: =3
 
@@ -504,10 +572,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey28.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey28.Y
                 ZIndex: =4
 
@@ -517,8 +589,8 @@ Screen_AppFunction As screen:
                 DisplayMode: =DisplayMode.View
                 Height: =32
                 IconSize: ='InfoButtonCanvas.IconSize'.Large
-                Width: =32
-                X: =145
+                Width: =36.00
+                X: =163.13
                 Y: =10
                 ZIndex: =5
 
@@ -533,8 +605,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_4")
             Required: =false
             Update: =DataCardValue11.Text
-            Width: =468
-            X: =1
+            Width: =526.50
+            X: =1.13
             Y: =2
             ZIndex: =13
 
@@ -542,10 +614,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -557,13 +632,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =408
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey18.Y + DataCardKey18.Height + 5
                 ZIndex: =2
 
@@ -574,12 +652,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue11.Y + DataCardValue11.Height
                 ZIndex: =3
 
@@ -587,19 +666,26 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey18.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey18.Y
                 ZIndex: =4
 
             Label7_2 As label:
                 Align: =Align.Center
                 Font: =Font.Lato
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="VND"
-                Width: =52
-                X: =386
+                Width: =58.50
+                X: =434.25
                 Y: =49
                 ZIndex: =5
 
@@ -613,18 +699,21 @@ Screen_AppFunction As screen:
             Height: =50
             Required: =false
             Update: =Value(DataCardValue9.Text)
-            Width: =234
-            X: =2
+            Width: =263.24
+            X: =2.25
             Y: =2
             ZIndex: =13
 
             DataCardKey16 As label:
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =157
+                Width: =176.63
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -636,13 +725,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 Format: =TextFormat.Number
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =157
-                X: =30
+                Width: =176.63
+                X: =33.75
                 Y: =DataCardKey16.Y + DataCardKey16.Height + 5
                 ZIndex: =2
 
@@ -653,12 +745,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =195.75
+                X: =33.75
                 Y: =DataCardValue9.Y + DataCardValue9.Height
                 ZIndex: =3
 
@@ -666,10 +759,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey16.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey16.Y
                 ZIndex: =4
 
@@ -684,8 +781,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_3")
             Required: =false
             Update: =DataCardValue10.Text
-            Width: =156
-            X: =2
+            Width: =175.50
+            X: =2.25
             Y: =2
             ZIndex: =13
 
@@ -693,10 +790,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =88
+                Width: =99.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -708,13 +808,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =88
-                X: =30
+                Width: =99.00
+                X: =33.75
                 Y: =DataCardKey17.Y + DataCardKey17.Height + 5
                 ZIndex: =2
 
@@ -725,12 +828,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =107.99
+                X: =33.75
                 Y: =DataCardValue10.Y + DataCardValue10.Height
                 ZIndex: =3
 
@@ -738,10 +842,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey17.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey17.Y
                 ZIndex: =4
 
@@ -756,8 +864,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_5")
             Required: =false
             Update: =DataCardValue14.Text
-            Width: =468
-            X: =0
+            Width: =526.50
+            X: =0.00
             Y: =4
             ZIndex: =13
 
@@ -765,10 +873,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -780,13 +891,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey19.Y + DataCardKey19.Height + 5
                 ZIndex: =2
 
@@ -797,12 +911,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue14.Y + DataCardValue14.Height
                 ZIndex: =3
 
@@ -810,10 +925,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey19.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey19.Y
                 ZIndex: =4
 
@@ -828,8 +947,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_10")
             Required: =false
             Update: =DataCardValue16.Text
-            Width: =468
-            X: =1
+            Width: =526.50
+            X: =1.13
             Y: =4
             ZIndex: =13
 
@@ -837,10 +956,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -852,13 +974,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey21.Y + DataCardKey21.Height + 5
                 ZIndex: =2
 
@@ -869,12 +994,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue16.Y + DataCardValue16.Height
                 ZIndex: =3
 
@@ -882,10 +1008,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey21.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey21.Y
                 ZIndex: =4
 
@@ -900,8 +1030,8 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue19.Selected
             Visible: =false
-            Width: =468
-            X: =2
+            Width: =526.50
+            X: =2.25
             Y: =4
             ZIndex: =13
 
@@ -909,10 +1039,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -924,12 +1057,15 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 Items: =Choices([@PRManagement].'Finance Confirmation')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 SearchFields: =["Value"]
                 SearchItems: =Choices(PRManagement.'Finance Confirmation',DataCardValue19.SearchText)
                 SelectMultiple: =false
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =408
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey24.Y + DataCardKey24.Height + 5
                 ZIndex: =2
 
@@ -940,12 +1076,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue19.Y + DataCardValue19.Height
                 ZIndex: =3
 
@@ -953,10 +1090,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey24.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey24.Y
                 ZIndex: =4
 
@@ -971,8 +1112,8 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue20.Selected
             Visible: =false
-            Width: =468
-            X: =3
+            Width: =526.50
+            X: =3.38
             Y: =4
             ZIndex: =13
 
@@ -980,10 +1121,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -995,12 +1139,15 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 Items: =Choices([@PRManagement].'GD Confirmation')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 SearchFields: =["Value"]
                 SearchItems: =Choices(PRManagement.'GD Confirmation',DataCardValue20.SearchText)
                 SelectMultiple: =false
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =408
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey25.Y + DataCardKey25.Height + 5
                 ZIndex: =2
 
@@ -1011,12 +1158,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue20.Y + DataCardValue20.Height
                 ZIndex: =3
 
@@ -1024,10 +1172,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey25.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey25.Y
                 ZIndex: =4
 
@@ -1043,8 +1195,8 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue18.Text
             Visible: =false
-            Width: =468
-            X: =4
+            Width: =526.50
+            X: =4.50
             Y: =4
             ZIndex: =13
 
@@ -1052,10 +1204,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =459.00
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -1067,13 +1222,16 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 MaxLength: =Parent.MaxLength
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardKey23.Y + DataCardKey23.Height + 5
                 ZIndex: =2
 
@@ -1084,12 +1242,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =459.00
+                X: =33.75
                 Y: =DataCardValue18.Y + DataCardValue18.Height
                 ZIndex: =3
 
@@ -1097,10 +1256,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey23.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey23.Y
                 ZIndex: =4
 
@@ -1115,8 +1278,8 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue22.SelectedItems
             Visible: =false
-            Width: =390
-            X: =5
+            Width: =438.75
+            X: =5.63
             Y: =4
             ZIndex: =13
 
@@ -1124,10 +1287,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =371.25
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -1139,12 +1305,15 @@ Screen_AppFunction As screen:
                 Font: =Font.Lato
                 Items: =Choices([@PRManagement].'Line Manager')
                 PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 SearchFields: =["DisplayName"]
                 SearchItems: =Choices(PRManagement.'Line Manager',DataCardValue22.SearchText)
+                Size: =14.64
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =371.25
+                X: =33.75
                 Y: =DataCardKey27.Y + DataCardKey27.Height + 5
                 ZIndex: =2
 
@@ -1155,12 +1324,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =371.25
+                X: =33.75
                 Y: =DataCardValue22.Y + DataCardValue22.Height
                 ZIndex: =3
 
@@ -1168,10 +1338,14 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey27.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey27.Y
                 ZIndex: =4
 
@@ -1188,8 +1362,8 @@ Screen_AppFunction As screen:
             Update: =DataCardValue17.Text
             Visible: |
                 =false
-            Width: =234
-            X: =2
+            Width: =263.24
+            X: =2.25
             Y: =450
             ZIndex: =13
 
@@ -1197,10 +1371,13 @@ Screen_AppFunction As screen:
                 AutoHeight: =true
                 Font: =Font.Lato
                 Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =Parent.Width - 60
+                Width: =195.75
                 Wrap: =false
-                X: =30
+                X: =33.75
                 Y: =10
                 ZIndex: =1
 
@@ -1214,13 +1391,16 @@ Screen_AppFunction As screen:
                 MaxLength: =Parent.MaxLength
                 Mode: =TextMode.MultiLine
                 PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
                 RadiusBottomLeft: =0
                 RadiusBottomRight: =0
                 RadiusTopLeft: =0
                 RadiusTopRight: =0
+                Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =195.75
+                X: =33.75
                 Y: =75
                 ZIndex: =2
 
@@ -1231,12 +1411,13 @@ Screen_AppFunction As screen:
                 Live: =Live.Assertive
                 PaddingBottom: =0
                 PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
                 Text: =Parent.Error
                 Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =Parent.Width - 60
-                X: =30
+                Width: =195.75
+                X: =33.75
                 Y: =DataCardValue17.Y + DataCardValue17.Height
                 ZIndex: =3
 
@@ -1244,20 +1425,27 @@ Screen_AppFunction As screen:
                 Align: =Align.Center
                 Font: =Font.Lato
                 Height: =DataCardKey22.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
                 Text: ="*"
                 Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =30
+                Width: =33.75
                 Wrap: =false
+                X: =0.00
                 Y: =DataCardKey22.Y
                 ZIndex: =4
 
     Label8_1 As label:
         Height: =41
+        PaddingRight: =5.63
+        PaddingTop: =5.63
+        Size: =14.64
         Text: |-
             ="Created Date: "  & varItem.Created
         Visible: =If(Form2.Mode = FormMode.New, false, true)
-        Width: =351
-        X: =1011
+        Width: =394.88
+        X: =757.12
         Y: =482
         ZIndex: =17
 
@@ -1272,31 +1460,37 @@ Screen_AppFunction As screen:
             Fill: =RGBA(227, 234, 243, 1)
             Height: =286
             Visible: =If(Form2.Mode = FormMode.New, false, true)
-            Width: =359
-            X: =1007
+            Width: =403.88
+            X: =793
             Y: =482
             ZIndex: =14
 
         Label8 As label:
             Height: =206
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: |-
                 =If(
                 varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
             VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form2.Mode = FormMode.New, false, true)
-            Width: =283
-            X: =1007
+            Width: =318.38
+            X: =793
             Y: =562
             ZIndex: =15
 
         Label9 As label:
             Font: =Font.'Lato Black'
             Height: =39
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
             Text: |-
                 ="Approve Log:"
             Visible: =If(Form2.Mode = FormMode.New, false, true)
-            Width: =121
-            X: =1007
+            Width: =136.14
+            X: =793
             Y: =523
             ZIndex: =16
 
