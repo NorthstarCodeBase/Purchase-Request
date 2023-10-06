@@ -155,10 +155,10 @@ Screen_Main As screen:
                         ScreenTransition.UnCover
                     )
                 );
-            Text: ="Line Manager approve"
+            Text: ="Head of Department Approve"
             Width: =405
             X: =849
-            Y: =276
+            Y: =369
             ZIndex: =2
 
         FINApprove As button:
@@ -176,10 +176,10 @@ Screen_Main As screen:
                     )
                 );
                 Set(varMgr,2);
-            Text: ="Finace Manager approve"
+            Text: ="Head of Finance Approve"
             Width: =405
             X: =849
-            Y: =414
+            Y: =507
             ZIndex: =3
 
         GDApprove As button:
@@ -188,10 +188,10 @@ Screen_Main As screen:
             Font: =Font.Lato
             Height: =58
             OnSelect: =If(User().Email=varDirector.Email||User().Email=LookUp(PRROLE,ROLE="ADMIN1",PIC).Email||User().Email=LookUp(PRROLE,ROLE="ADMIN2",PIC).Email,Navigate(Screen_Approval,ScreenTransition.Cover),Navigate(Message_PermissionIssue,ScreenTransition.UnCover));Set(varMgr,3)
-            Text: ="GD approve"
+            Text: ="General Director Approve"
             Width: =405
             X: =849
-            Y: =552
+            Y: =645
             ZIndex: =4
 
         Create_1 As button:
@@ -203,7 +203,7 @@ Screen_Main As screen:
             Text: ="Create New Request"
             Width: =405
             X: =849
-            Y: =143
+            Y: =236
             ZIndex: =7
 
         Label5 As label:
@@ -213,7 +213,7 @@ Screen_Main As screen:
             Text: ="Click here to view and create new Purchase Order"
             Width: =296
             X: =903
-            Y: =103
+            Y: =196
             ZIndex: =9
 
         Label5_1 As label:
@@ -223,17 +223,17 @@ Screen_Main As screen:
             Text: ="Managers can click here to approve/reject PR"
             Width: =296
             X: =903
-            Y: =236
+            Y: =329
             ZIndex: =10
 
         Label5_2 As label:
             Align: =Align.Center
             Font: =Font.Lato
             Size: =9
-            Text: ="Finance Manager can click here to approve/reject PR"
+            Text: ="Head of Finance can click here to approve/reject PR"
             Width: =296
             X: =904
-            Y: =374
+            Y: =467
             ZIndex: =11
 
         Label5_3 As label:
@@ -243,7 +243,7 @@ Screen_Main As screen:
             Text: ="General Director can click here to approve/reject PR"
             Width: =296
             X: =905
-            Y: =512
+            Y: =605
             ZIndex: =12
 
         Circle1 As circle:
@@ -252,7 +252,7 @@ Screen_Main As screen:
             Visible: =Value(Mrg_Noti.Text)
             Width: =39
             X: =1226
-            Y: =256
+            Y: =349
             ZIndex: =19
 
         Mrg_Noti As label:
@@ -273,7 +273,7 @@ Screen_Main As screen:
             Visible: =Value(Mrg_Noti.Text)
             Width: =39
             X: =1226
-            Y: =263
+            Y: =356
             ZIndex: =21
 
         Circle1_1 As circle:
@@ -282,7 +282,7 @@ Screen_Main As screen:
             Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
             Width: =39
             X: =1227
-            Y: =399
+            Y: =492
             ZIndex: =22
 
         FIN_Noti As label:
@@ -302,7 +302,7 @@ Screen_Main As screen:
             Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
             Width: =39
             X: =1227
-            Y: =406
+            Y: =499
             ZIndex: =23
 
         Circle1_2 As circle:
@@ -311,7 +311,7 @@ Screen_Main As screen:
             Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
             Width: =39
             X: =1227
-            Y: =536
+            Y: =629
             ZIndex: =24
 
         GD_Noti As label:
@@ -332,7 +332,7 @@ Screen_Main As screen:
             Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
             Width: =39
             X: =1227
-            Y: =543
+            Y: =636
             ZIndex: =25
 
     Group7_1 As group:
