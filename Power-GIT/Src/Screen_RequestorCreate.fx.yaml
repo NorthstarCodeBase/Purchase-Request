@@ -114,7 +114,7 @@ Screen_RequestorCreate As screen:
         OnFailure: =Notify("Please fulfill all required data",NotificationType.Error)
         OnSuccess: =Navigate(Message_Done)
         SnapToColumns: =false
-        Width: =1018.13
+        Width: =905.00
         X: =0.00
         Y: =80
         ZIndex: =8
@@ -1168,7 +1168,7 @@ Screen_RequestorCreate As screen:
             Height: =286
             Visible: =If(Form1.Mode = FormMode.New, false, true)
             Width: =490.50
-            X: =716
+            X: =716.00
             Y: =482
             ZIndex: =9
 
@@ -1183,7 +1183,7 @@ Screen_RequestorCreate As screen:
             VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form1.Mode = FormMode.New, false, true)
             Width: =490.50
-            X: =716
+            X: =716.00
             Y: =562
             ZIndex: =10
 
@@ -1197,7 +1197,7 @@ Screen_RequestorCreate As screen:
                 ="Approve Log:"
             Visible: =If(Form1.Mode = FormMode.New, false, true)
             Width: =136.14
-            X: =716
+            X: =716.00
             Y: =523
             ZIndex: =11
 

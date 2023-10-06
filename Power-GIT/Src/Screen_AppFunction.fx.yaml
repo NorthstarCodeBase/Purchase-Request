@@ -190,8 +190,8 @@ Screen_AppFunction As screen:
         NumberOfColumns: =2
         OnSuccess: =Notify("Approved Done",NotificationType.Success)
         SnapToColumns: =false
-        Width: =1054.13
-        X: =78.75
+        Width: =937.00
+        X: =70.00
         Y: =73
         ZIndex: =12
 
@@ -1461,7 +1461,7 @@ Screen_AppFunction As screen:
             Height: =286
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =403.88
-            X: =793
+            X: =793.00
             Y: =482
             ZIndex: =14
 
@@ -1476,7 +1476,7 @@ Screen_AppFunction As screen:
             VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =318.38
-            X: =793
+            X: =793.00
             Y: =562
             ZIndex: =15
 
@@ -1490,7 +1490,7 @@ Screen_AppFunction As screen:
                 ="Approve Log:"
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =136.14
-            X: =793
+            X: =793.00
             Y: =523
             ZIndex: =16
 
