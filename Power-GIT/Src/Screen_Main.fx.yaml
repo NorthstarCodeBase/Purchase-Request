@@ -200,7 +200,7 @@ Screen_Main As screen:
             Font: =Font.Lato
             Height: =53
             OnSelect: =Refresh(PRManagement);Navigate(Screen_Requestor,ScreenTransition.Cover)
-            Text: ="Create New Order"
+            Text: ="Create New Request"
             Width: =405
             X: =849
             Y: =143
