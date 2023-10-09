@@ -252,7 +252,7 @@ Screen_Main As screen:
             PaddingRight: =5.63
             PaddingTop: =5.63
             Size: =10.13
-            Text: ="Click here to view and create new Purchase Order"
+            Text: ="Click here to view and create new Purchase Request"
             Width: =333.00
             X: =841
             Y: =140
