@@ -9,10 +9,10 @@
         PaddingRight: =5.63
         PaddingTop: =5.63
         Size: =45.01
-        Text: =If(CountRows(Gallery2.AllItems) = 0 , "NO ITEMS TO APPROVE", Blank())
+        Text: =If(CountRows(Gallery2.AllItems) = 0 , "NO ITEMS TO SHOW", Blank())
         Width: =886.50
-        X: =325.11
-        Y: =311
+        X: =194
+        Y: =388
         ZIndex: =1
 
     Title1_4 As label:
@@ -25,7 +25,7 @@
         PaddingTop: =5.63
         Size: =20.25
         Text: =
-        Width: =1146
+        Width: =1366
         X: =0.00
         Y: =79
         ZIndex: =2
@@ -44,37 +44,9 @@
         X: =0.00
         ZIndex: =3
 
-    Label1 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.Lato
-        FontWeight: =FontWeight.Semibold
-        Height: =33
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =14.64
-        Text: |-
-            ="PR ID: "
-        Width: =114.75
-        X: =20.25
-        Y: =92
-        ZIndex: =4
-
-    TextInputID As text:
-        Default: =Blank()
-        Font: =Font.Lato
-        Format: =TextFormat.Number
-        HintText: ="PR ID"
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Reset: =varreset
-        Size: =14.64
-        Width: =88
-        X: =20.25
-        Y: =129
-        ZIndex: =5
-
     Create As button:
         BorderStyle: =BorderStyle.None
+        Fill: =RGBA(141, 198, 63, 1)
         Font: =Font.Lato
         Height: =46
         OnSelect: |-
@@ -83,10 +55,10 @@
         PaddingRight: =5.63
         PaddingTop: =5.63
         Size: =16.86
-        Text: ="Create New Order"
-        Width: =202.49
-        X: =1317.38
-        Y: =79
+        Text: ="New Request"
+        Width: =179
+        X: =1164
+        Y: =83
         ZIndex: =6
 
     LoginUser As label:
@@ -115,26 +87,12 @@
         Y: =33
         ZIndex: =8
 
-    Back As button:
-        BorderStyle: =BorderStyle.None
-        Fill: =RGBA(0,78,151,59)
-        Font: =Font.Lato
-        Height: =46
-        OnSelect: =Navigate(Screen_Main,ScreenTransition.CoverRight)
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =16.86
-        Text: ="Back"
-        Width: =202.49
-        X: =1317.38
-        Y: =138
-        ZIndex: =9
-
     Search_4 As button:
         BorderStyle: =BorderStyle.None
         Fill: =RGBA(255,0,0,1)
         Font: =Font.Lato
         Height: =46
+        HoverFill: =ColorFade(RGBA(255,0,0,1), -20%)
         OnSelect: |-
             =Set(varreset, true);
             Set(varreset, false)
@@ -142,9 +100,9 @@
         PaddingTop: =5.63
         Size: =16.86
         Text: ="Reset Filter"
-        Width: =154.13
-        X: =1135.13
-        Y: =125
+        Width: =179
+        X: =1164
+        Y: =134
         ZIndex: =10
 
     "Gallery2 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
@@ -157,7 +115,7 @@
             =Sort(
                 Filter(
                     PRManagement,
-                    varuser.Department = Department,
+                    (User().Email <> varPurchasing.Email && varuser.Department = Department),
                     'PR Status'.Value = StatusDropdown.Selected.Value || StatusDropdown.Selected.Value = Blank(),
                     Created >= Datefrom.SelectedDate || Datefrom.SelectedDate = Blank(),
                     Created <= Dateto.SelectedDate || Dateto.SelectedDate = Blank(),
@@ -174,7 +132,7 @@
         TemplateSize: =60
         Visible: |
             =If(CountRows(Gallery2.AllItems) = 0 , false, true)
-        Width: =1366
+        Width: =Parent.Width
         X: =0.00
         Y: =237
         ZIndex: =11
@@ -203,7 +161,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =20.25
+            Size: =14
             Text: =ThisItem.Title
             Width: =243.00
             X: =106.89
@@ -217,7 +175,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =17.99
+            Size: =14
             Text: =ThisItem.'Created By'.DisplayName
             Width: =185.63
             X: =570.36
@@ -258,7 +216,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =17.99
+            Size: =14
             Text: =Text(Round(Value(ThisItem.'Total Amount'),2),"[$-en-US]0,000") & "    VND  "
             Width: =249.75
             X: =761.63
@@ -300,7 +258,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =17.99
+            Size: =14
             Text: =ThisItem.Department
             Width: =210.38
             X: =352.14
@@ -322,71 +280,20 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =17.99
+            Size: =14
             Text: =ThisItem.Purpose
             Width: =249.75
             X: =1019.25
             ZIndex: =13
 
-    StatusDropdown As dropdown:
-        AllowEmptySelection: =true
-        Default: ="Pending"
-        Font: =Font.Lato
-        Items: |-
-            =//Distinct(PRManagement,'PR Status'.Value)
-            ["Approved","Pending","Rejected"]
-        PaddingRight: =11.25
-        PaddingTop: =11.25
-        Reset: =varreset
-        Size: =14.64
-        Width: =122.63
-        X: =311.63
-        Y: =129
-        ZIndex: =18
-
-    StatusDropdown_1 As dropdown:
-        AllowEmptySelection: =true
-        Default: ="Pending"
-        Font: =Font.Lato
-        Items: =Distinct(PRManagement,'Created By'.DisplayName)
-        PaddingRight: =11.25
-        PaddingTop: =11.25
-        Reset: =varreset
-        Size: =14.64
-        Width: =102
-        X: =129
-        Y: =129
-        ZIndex: =19
-
-    Label1_2 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.Lato
-        FontWeight: =FontWeight.Semibold
-        Height: =34
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =14.64
-        Text: |-
-            ="Create by:"
-        Width: =103
-        X: =128
-        Y: =95
-        ZIndex: =20
-
-    Label1_3 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.Lato
-        FontWeight: =FontWeight.Semibold
-        Height: =37
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =14.64
-        Text: |-
-            ="Status:"
-        Width: =122.63
-        X: =311.63
-        Y: =93
-        ZIndex: =21
+        Image3 As image:
+            Height: =60
+            Image: ='—Pngtree—vector eye icon_3783307'
+            OnSelect: |-
+                =Set(varItem, ThisItem);
+                ResetForm(Form1);ViewForm(Form1);Navigate(Screen_RequestorCreate)
+            X: =1266
+            ZIndex: =14
 
     Group2 As group:
         Height: =5
@@ -412,7 +319,7 @@
             Text: |-
                 ="ID
                 "
-            Width: =91
+            Width: =Title3_1.Width +10
             X: =0.00
             Y: =191
             ZIndex: =12
@@ -434,8 +341,8 @@
             Text: |-
                 ="Title
                 "
-            Width: =230
-            X: =91
+            Width: =TicketTitle_1.Width + 5
+            X: =TicketTitle_1.X
             Y: =191
             ZIndex: =13
 
@@ -456,8 +363,8 @@
             Text: |-
                 ="Requester
                 "
-            Width: =172
-            X: =510
+            Width: =Requester_1.Width+10
+            X: =Requester_1.X
             Y: =191
             ZIndex: =14
 
@@ -478,8 +385,8 @@
             Text: |-
                 ="Amount
                 "
-            Width: =233
-            X: =681
+            Width: =GL1_Money_1.Width
+            X: =GL1_Money_1.X
             Y: =191
             ZIndex: =15
 
@@ -500,8 +407,8 @@
             Text: |-
                 ="Department
                 "
-            Width: =191
-            X: =320
+            Width: =GL1_Dept_3.Width +10
+            X: =GL1_Dept_3.X
             Y: =191
             ZIndex: =16
 
@@ -522,114 +429,250 @@
             Text: |-
                 ="Purpose
                 "
-            Width: =476
-            X: =888
+            Width: =GL1_Dept_2.Width  + 110
+            X: =GL1_Dept_2.X -10
             Y: =191
             ZIndex: =17
-
-    Label1_4 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.Lato
-        FontWeight: =FontWeight.Semibold
-        Height: =37
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =14.64
-        Text: |-
-            ="Date from:"
-        Width: =138.36
-        X: =454
-        Y: =92
-        ZIndex: =24
-
-    Label1_5 As label:
-        Color: =RGBA(255, 255, 255, 1)
-        Font: =Font.Lato
-        FontWeight: =FontWeight.Semibold
-        Height: =37
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =14.64
-        Text: |-
-            ="Date to:"
-        Width: =140.61
-        X: =628.89
-        Y: =93
-        ZIndex: =25
 
     Label1_6 As label:
         Color: =RGBA(255, 255, 255, 1)
         Font: =Font.Lato
         FontWeight: =FontWeight.Semibold
-        Height: =37
+        Height: =39
         PaddingRight: =5.63
         PaddingTop: =5.63
-        Size: =14.64
+        Size: =12
         Text: |-
             ="Amount:    " & Text(Round(Value(Slider1.Text),2),"[$-en-US]0,000")  &  "-"& Text(Round(Value(Slider1_1.Text),2),"[$-en-US]0,000") & "  VND"
-        Width: =353.26
-        X: =816.74
-        Y: =87
+        Width: =311
+        X: =823
+        Y: =90
         ZIndex: =26
 
-    Icon6 As icon.Reload:
+    back_1 As icon.Reload:
         Color: =RGBA(255, 255, 255, 1)
-        Icon: =Icon.Reload
-        OnSelect: =Refresh(PRManagement)
-        PaddingRight: =0.00
-        PaddingTop: =0.00
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(Screen_Main,ScreenTransition.CoverRight)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
         Width: =72.00
-        X: =0.00
         Y: =4
         ZIndex: =27
 
     Slider1 As text:
         Default: =0
         Format: =TextFormat.Number
-        Height: =34
         PaddingRight: =5.63
         PaddingTop: =5.63
         Reset: =varreset
-        Size: =14.64
-        Width: =147.38
-        X: =816.74
-        Y: =132
+        Size: =12
+        Width: |
+            =150
+        X: =823
+        Y: =134
         ZIndex: =28
 
     Slider1_1 As text:
         Default: |
             =1000000000
         Format: =TextFormat.Number
-        Height: =34
         PaddingRight: =5.63
         PaddingTop: =5.63
         Reset: =varreset
-        Size: =14.64
-        Width: =147.38
-        X: =975.38
-        Y: =132
+        Size: =12
+        Width: |
+            =150
+        X: =985
+        Y: =134
         ZIndex: =29
 
-    Datefrom As datepicker:
-        DefaultDate: =Today()-365
-        Height: =42
-        PaddingRight: =5.63
-        PaddingTop: =0.00
-        Size: =12.39
-        Width: =141.74
-        X: =460.13
-        Y: =128
-        ZIndex: =30
+    Group1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
 
-    Dateto As datepicker:
-        DefaultDate: =Today()+1
-        Height: =41
-        InputTextPlaceholder: =
-        PaddingRight: =5.63
-        PaddingTop: =0.00
-        Size: =12.39
-        Width: =141.74
-        X: =627.76
-        Y: =129
-        ZIndex: =31
+        Label1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =33
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
+            Text: |-
+                ="PR ID: "
+            Width: |
+                =150
+            X: =20.25
+            Y: =89
+            ZIndex: =4
+
+        TextInputID As text:
+            Default: =Blank()
+            Font: =Font.Lato
+            Format: =TextFormat.Number
+            HintText: ="PR ID"
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Reset: =varreset
+            Size: =12
+            Width: |
+                =150
+            X: =20.25
+            Y: =133
+            ZIndex: =5
+
+    Group3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        StatusDropdown_1 As dropdown:
+            AllowEmptySelection: =true
+            Default: ="Pending"
+            Font: =Font.Lato
+            Items: =Distinct(PRManagement,'Created By'.DisplayName)
+            PaddingRight: =11.25
+            PaddingTop: =11.25
+            Reset: =varreset
+            Size: =12
+            Width: |
+                =150
+            X: =179
+            Y: =133
+            ZIndex: =19
+
+        Label1_2 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =39
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
+            Text: |-
+                ="Create by:"
+            Width: |
+                =150
+            X: =179
+            Y: =89
+            ZIndex: =20
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        StatusDropdown As dropdown:
+            AllowEmptySelection: =true
+            Default: ="Pending"
+            Font: =Font.Lato
+            Height: =41
+            Items: |-
+                =//Distinct(PRManagement,'PR Status'.Value)
+                ["Approved","Pending","Rejected"]
+            PaddingRight: =11.25
+            PaddingTop: =11.25
+            Reset: =varreset
+            Size: =12
+            Width: |
+                =150
+            X: =338
+            Y: =133
+            ZIndex: =18
+
+        Label1_3 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =37
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
+            Text: |-
+                ="Status:"
+            Width: |
+                =150
+            X: =338
+            Y: =89
+            ZIndex: =21
+
+    Group15 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        Label1_4 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =37
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
+            Text: |-
+                ="Date from:"
+            Width: |
+                =150
+            X: =497
+            Y: =89
+            ZIndex: =24
+
+        Datefrom As datepicker:
+            DefaultDate: =Today()-365
+            Height: =42
+            PaddingRight: =5.63
+            PaddingTop: =0.00
+            Size: =12
+            Width: |
+                =150
+            X: =497
+            Y: =132
+            ZIndex: =30
+
+    Group16 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =32
+
+        Label1_5 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Semibold
+            Height: =37
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =14.64
+            Text: |-
+                ="Date to:"
+            Width: |
+                =150
+            X: =658
+            Y: =89
+            ZIndex: =25
+
+        Dateto As datepicker:
+            DefaultDate: =Today()+1
+            Height: =41
+            InputTextPlaceholder: =
+            PaddingRight: =5.63
+            PaddingTop: =0.00
+            Size: =12
+            Width: |
+                =150
+            X: =658
+            Y: =133
+            ZIndex: =31
 

@@ -3,6 +3,15 @@ Screen_RequestorCreate As screen:
     OnHidden: =
     OnVisible: =Set(varSup, false)
 
+    Rectangle2 As rectangle:
+        Fill: =RGBA(253, 222, 207, 1)
+        Height: =232
+        Visible: =If(Form1.Mode = FormMode.New,true,false)
+        Width: =422
+        X: =926
+        Y: =505
+        ZIndex: =1
+
     Button4 As button:
         BorderStyle: =BorderStyle.None
         DisplayMode: =If(Form1.Mode = FormMode.New, DisplayMode.Edit, DisplayMode.Disabled)
@@ -28,8 +37,8 @@ Screen_RequestorCreate As screen:
         Size: =16.86
         Text: ="Submit"
         Width: =304.88
-        X: =847.12
-        Y: =99
+        X: =926
+        Y: =118
         ZIndex: =2
 
     Button5 As button:
@@ -44,8 +53,8 @@ Screen_RequestorCreate As screen:
         Size: =16.86
         Text: ="Back"
         Width: =300.38
-        X: =851.62
-        Y: =210
+        X: =930
+        Y: =229
         ZIndex: =3
 
     Button6 As button:
@@ -61,8 +70,8 @@ Screen_RequestorCreate As screen:
         Size: =16.86
         Text: ="Clear"
         Width: =300.38
-        X: =851.62
-        Y: =340
+        X: =939
+        Y: =357
         ZIndex: =4
 
     Title1_1 As label:
@@ -75,7 +84,7 @@ Screen_RequestorCreate As screen:
         PaddingTop: =5.63
         Size: =20.25
         Text: ="CREATE PURCHASING REQUEST"
-        Width: =168.76
+        Width: =Parent.Width
         X: =0.00
         ZIndex: =5
 
@@ -89,7 +98,7 @@ Screen_RequestorCreate As screen:
         Text: |-
             ="User login: " & User().FullName
         Width: =349.89
-        X: =802.11
+        X: =1017
         ZIndex: =6
 
     LoginDate_1 As label:
@@ -101,22 +110,22 @@ Screen_RequestorCreate As screen:
         Text: |-
             ="Date: " & Today()
         Width: =349.89
-        X: =802.11
+        X: =1017
         Y: =33
         ZIndex: =7
 
     Form1 As form:
         BorderThickness: =1
         DataSource: =PRManagement
-        Height: =688
+        Height: =696
         Item: =varItem
         NumberOfColumns: =1
         OnFailure: =Notify("Please fulfill all required data",NotificationType.Error)
         OnSuccess: =Navigate(Message_Done)
         SnapToColumns: =false
-        Width: =905.00
+        Width: =902
         X: =0.00
-        Y: =80
+        Y: =71
         ZIndex: =8
 
         "'Total Amount_DataCard1' As typedDataCard.numberEditCard":
@@ -129,7 +138,7 @@ Screen_RequestorCreate As screen:
             Height: =93
             Required: =true
             Update: =Value(TotalAmountCard.Text)
-            Width: =1015.88
+            Width: =Parent.Width -10
             X: =0.00
             Y: =4
             ZIndex: =1
@@ -240,7 +249,7 @@ Screen_RequestorCreate As screen:
             Required: |
                 =true
             Visible: =false
-            Width: =1068.75
+            Width: =Parent.Width -10
             X: =0.00
             Y: =10
             ZIndex: =1
@@ -286,7 +295,7 @@ Screen_RequestorCreate As screen:
             Height: =50
             Required: =false
             Update: =DataCardValue2.Selected
-            Width: =1018.13
+            Width: =Parent.Width -10
             X: =0.00
             Y: =11
             ZIndex: =1
@@ -319,7 +328,7 @@ Screen_RequestorCreate As screen:
                 Size: =14.64
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
-                Width: =675.00
+                Width: =Parent.Width - 300
                 X: =271.13
                 Y: =5
                 ZIndex: =2
@@ -365,7 +374,7 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "Title")
             Required: =true
             Update: =DataCardValue1.Text
-            Width: =1015.88
+            Width: =Parent.Width -10
             X: =0.00
             Y: =0
             ZIndex: =9
@@ -400,7 +409,7 @@ Screen_RequestorCreate As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =675.00
+                Width: =Parent.Width - 300
                 X: =270.00
                 Y: =5
                 ZIndex: =2
@@ -531,7 +540,7 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_3")
             Required: =true
             Update: =Dropdown1.Selected.Value
-            Width: =506.26
+            Width: =360
             X: =3.38
             Y: =0
             ZIndex: =9
@@ -602,11 +611,11 @@ Screen_RequestorCreate As screen:
             DisplayMode: =
             DisplayName: =DataSourceInfo([@PRManagement],DataSourceInfo.DisplayName,"field_5")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
+            Height: =62
             MaxLength: =255
             Required: =true
             Update: =If(varSup,NewSupplierText.Text, SupplierdropDown.Selected.Value)
-            Width: =1015.88
+            Width: =900
             X: =1.13
             Y: =2
             ZIndex: =9
@@ -622,7 +631,7 @@ Screen_RequestorCreate As screen:
                 Width: =186.75
                 Wrap: =false
                 X: =33.75
-                Y: =10 + (SupplierdropDown.Height / 2) - (Self.Height / 2)
+                Y: =14
                 ZIndex: =1
 
             ErrorMessage5 As label:
@@ -674,9 +683,9 @@ Screen_RequestorCreate As screen:
                 Size: =14.64
                 Visible: |
                     =!varSup
-                Width: =514.13
+                Width: =Parent.Width - 430
                 X: =270.00
-                Y: =6
+                Y: =11
                 ZIndex: =4
 
             NewSupplierText As text:
@@ -690,15 +699,15 @@ Screen_RequestorCreate As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Visible: =varSup
-                Width: =500.63
+                Width: =Parent.Width - 450
                 X: =270.00
-                Y: =6
+                Y: =11
                 ZIndex: =5
 
             Button1 As button:
                 DisplayMode: =
                 Font: =Font.Lato
-                Height: =53
+                Height: =50
                 OnSelect: =If(varSup =  false, Set(varSup, true), Set(varSup, false))
                 PaddingRight: =5.63
                 PaddingTop: =5.63
@@ -706,7 +715,8 @@ Screen_RequestorCreate As screen:
                 Text: =If(!varSup,"New Supplier", "Existed Supplier")
                 Visible: =If(Form1.Mode = FormMode.New,true, false)
                 Width: =126.00
-                X: =825.75
+                X: =749
+                Y: =6
                 ZIndex: =6
 
         Unit_Price_DataCard1 As typedDataCard.textualEditCard:
@@ -720,7 +730,7 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_4")
             Required: =true
             Update: =PriceCard.Text
-            Width: =1015.88
+            Width: =Parent.Width -10
             X: =0.00
             Y: =3
             ZIndex: =9
@@ -819,7 +829,7 @@ Screen_RequestorCreate As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_8")
             Required: =true
             Update: =DataCardValue6.Text
-            Width: =1015.88
+            Width: =Parent.Width -10
             X: =1.13
             Y: =5
             ZIndex: =9
@@ -856,7 +866,7 @@ Screen_RequestorCreate As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =675.00
+                Width: =Parent.Width - 300
                 X: =270.00
                 Y: =10
                 ZIndex: =2
@@ -905,7 +915,7 @@ Screen_RequestorCreate As screen:
             Required: |
                 =true
             Update: =DataCardValue7.Text
-            Width: =1068.75
+            Width: =Parent.Width -10
             X: =0.00
             Y: =7
             ZIndex: =9
@@ -941,7 +951,7 @@ Screen_RequestorCreate As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =675.00
+                Width: =Parent.Width - 300
                 X: =270.00
                 Y: =7
                 ZIndex: =2
@@ -990,7 +1000,7 @@ Screen_RequestorCreate As screen:
             Required: |
                 =true
             Update: =DataCardValue8.Text
-            Width: =1068.75
+            Width: =Parent.Width -10
             X: =0.00
             Y: =8
             ZIndex: =9
@@ -1027,7 +1037,7 @@ Screen_RequestorCreate As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =675.00
+                Width: =Parent.Width - 300
                 X: =270.00
                 Y: =7
                 ZIndex: =2
@@ -1074,7 +1084,7 @@ Screen_RequestorCreate As screen:
             Height: =141
             Required: =true
             Update: =DataCardValue12.Attachments
-            Width: =1012.50
+            Width: =Parent.Width -10
             X: =0.00
             Y: =9
             ZIndex: =9
@@ -1106,7 +1116,7 @@ Screen_RequestorCreate As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =675.00
+                Width: =Parent.Width - 300
                 X: =270.00
                 Y: =10
                 ZIndex: =2
@@ -1152,8 +1162,8 @@ Screen_RequestorCreate As screen:
             ="Created Date: "  & varItem.Created
         Visible: =If(Form1.Mode = FormMode.New, false, true)
         Width: =394.88
-        X: =757.12
-        Y: =482
+        X: =930
+        Y: =488
         ZIndex: =12
 
     Group8_1 As group:
@@ -1167,9 +1177,9 @@ Screen_RequestorCreate As screen:
             Fill: =RGBA(227, 234, 243, 1)
             Height: =286
             Visible: =If(Form1.Mode = FormMode.New, false, true)
-            Width: =490.50
-            X: =716.00
-            Y: =482
+            Width: =440
+            X: =926
+            Y: =479
             ZIndex: =9
 
         Label8_2 As label:
@@ -1182,8 +1192,8 @@ Screen_RequestorCreate As screen:
                 varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
             VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form1.Mode = FormMode.New, false, true)
-            Width: =490.50
-            X: =716.00
+            Width: =440
+            X: =926
             Y: =562
             ZIndex: =10
 
@@ -1196,177 +1206,10 @@ Screen_RequestorCreate As screen:
             Text: |-
                 ="Approve Log:"
             Visible: =If(Form1.Mode = FormMode.New, false, true)
-            Width: =136.14
-            X: =716.00
+            Width: =185
+            X: =926
             Y: =523
             ZIndex: =11
-
-    Label10_6 As label:
-        FontWeight: =FontWeight.Bold
-        Height: =44
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =12.39
-        Text: =varItem.'Manager Confirmation'.Value
-        Visible: =If(Form1.Mode = FormMode.New, true, false)
-        Width: =124.88
-        X: =1027.12
-        Y: =491
-        ZIndex: =24
-
-    Group5 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        Image2 As image:
-            Height: =62
-            Image: =Office365Users.UserPhoto(varManager.Email)
-            PaddingRight: =0.00
-            PaddingTop: =0.00
-            RadiusBottomLeft: =50
-            RadiusBottomRight: =50
-            RadiusTopLeft: =50
-            RadiusTopRight: =50
-            Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =64.13
-            X: =881.01
-            Y: =491
-            ZIndex: =14
-
-        Label10 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =19
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =12.39
-            Text: =varManager.DisplayName
-            Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =230.61
-            X: =881.01
-            Y: =491
-            ZIndex: =15
-
-        Label10_1 As label:
-            Height: =43
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =12.39
-            Text: =Office365Users.UserProfile(varManager.Email).JobTitle
-            Visible: =If(Form1.Mode = FormMode.New, true, false)
-            Width: =212.63
-            X: =881.01
-            Y: =510
-            ZIndex: =16
-
-    Group6 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        Image2_1 As image:
-            Height: =49
-            Image: =Office365Users.UserPhoto(User().Email)
-            PaddingRight: =0.00
-            PaddingTop: =0.00
-            RadiusBottomLeft: =50
-            RadiusBottomRight: =50
-            RadiusTopLeft: =50
-            RadiusTopRight: =50
-            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =67.50
-            X: =885.01
-            Y: =601
-            ZIndex: =17
-
-        Label10_2 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =15
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =12.39
-            Text: =User().FullName
-            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =222.75
-            X: =885.01
-            Y: =601
-            ZIndex: =18
-
-        Label10_3 As label:
-            Height: =13
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =12.39
-            Text: =IfError(Office365Users.UserProfile(User().Email).JobTitle,"")
-            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
-            Width: =222.75
-            X: =885.01
-            Y: =616
-            ZIndex: =19
-
-    Group12 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =24
-
-        Image2_2 As image:
-            Height: =49
-            Image: =Office365Users.UserPhoto(varDirector.Email)
-            PaddingRight: =0.00
-            PaddingTop: =0.00
-            RadiusBottomLeft: =50
-            RadiusBottomRight: =50
-            RadiusTopLeft: =50
-            RadiusTopRight: =50
-            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =67.50
-            X: =902.99
-            Y: =676
-            ZIndex: =21
-
-        Label10_4 As label:
-            FontWeight: =FontWeight.Semibold
-            Height: =21
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =12.39
-            Text: =varDirector.DisplayName
-            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =209.25
-            X: =902.99
-            Y: =685
-            ZIndex: =22
-
-        Label10_5 As label:
-            Height: =19
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =12.39
-            Text: =Office365Users.UserProfile(varDirector.Email).JobTitle
-            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-            Width: =209.25
-            X: =902.99
-            Y: =706
-            ZIndex: =23
-
-    Label10_7 As label:
-        FontWeight: =FontWeight.Bold
-        Height: =44
-        PaddingRight: =5.63
-        PaddingTop: =5.63
-        Size: =12.39
-        Text: =varItem.'Finance Confirmation'.Value
-        Visible: =If(Form1.Mode = FormMode.New, true, false)
-        Width: =124.88
-        X: =1027.12
-        Y: =588
-        ZIndex: =25
 
     Label10_8 As label:
         FontWeight: =FontWeight.Bold
@@ -1376,18 +1219,160 @@ Screen_RequestorCreate As screen:
         Size: =12.39
         Text: =varItem.'GD Confirmation'.Value
         Visible: =If(Form1.Mode = FormMode.New, true, false)
-        Width: =124.88
-        X: =1027.12
+        Width: =144
+        X: =1007
         Y: =693
-        ZIndex: =26
+        ZIndex: =22
 
-    Icon9_1 As icon.ArrowDown:
-        Height: =35
-        PaddingRight: =0.00
-        PaddingTop: =0.00
-        Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
-        Width: =66.38
-        X: =1085.62
-        Y: =650
-        ZIndex: =28
+    Label13 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =38
+        Text: |-
+            ="Approval Require:"
+        Visible: =If(Form1.Mode = FormMode.New,true,false)
+        Width: =198
+        X: =926
+        Y: =473
+        ZIndex: =23
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Image2 As image:
+            Height: =55
+            Image: =Office365Users.UserPhoto(varManager.Email)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Visible: =If(Form1.Mode = FormMode.New, true, false)
+            Width: =69
+            X: =934
+            Y: =511
+            ZIndex: =13
+
+        Label10 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =55
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
+            Text: =varManager.DisplayName
+            Visible: =If(Form1.Mode = FormMode.New, true, false)
+            Width: =249
+            X: =1001
+            Y: =511
+            ZIndex: =14
+
+        Label10_1 As label:
+            Height: =55
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
+            Text: =Office365Users.UserProfile(varManager.Email).JobTitle
+            Visible: =If(Form1.Mode = FormMode.New, true, false)
+            Width: =229
+            X: =1001
+            Y: =528
+            ZIndex: =15
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Image2_1 As image:
+            Height: =46
+            Image: =Office365Users.UserPhoto(varHeadofFinance.Email)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
+            Width: =73
+            X: =936
+            Y: =601
+            ZIndex: =16
+
+        Label10_2 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =23
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
+            Text: =varHeadofFinance.DisplayName
+            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
+            Width: =241
+            X: =1009
+            Y: =589
+            ZIndex: =17
+
+        Label10_3 As label:
+            Height: =46
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
+            Text: =IfError(Office365Users.UserProfile(varHeadofFinance.Email).JobTitle,"")
+            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 500 , true, false)
+            Width: =241
+            X: =1009
+            Y: =612
+            ZIndex: =18
+
+    Group12 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        Image2_2 As image:
+            Height: =55
+            Image: =Office365Users.UserPhoto(varDirector.Email)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
+            Width: =78
+            X: =936
+            Y: =675
+            ZIndex: =19
+
+        Label10_4 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =31
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
+            Text: =varDirector.DisplayName
+            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
+            Width: =244
+            X: =1006
+            Y: =675
+            ZIndex: =20
+
+        Label10_5 As label:
+            Height: =31
+            PaddingRight: =5.63
+            PaddingTop: =5.63
+            Size: =12.39
+            Text: =Office365Users.UserProfile(varDirector.Email).JobTitle
+            Visible: =If(Form1.Mode = FormMode.New && Round(Value(TotalAmountCard.Text)/23000,2) > 5000 , true, false)
+            Width: =244
+            X: =1006
+            Y: =706
+            ZIndex: =21
 

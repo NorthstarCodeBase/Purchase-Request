@@ -87,8 +87,8 @@ Screen_Main As screen:
         Text: |-
             ="Tech support: Hai.vu@northstar.vn;          Nguyet.Chu@northstar.vn"
         Width: =447.74
-        X: =801
-        Y: =718
+        X: =918
+        Y: =727
         ZIndex: =18
 
     Group7 As group:
@@ -240,7 +240,7 @@ Screen_Main As screen:
             PaddingRight: =5.63
             PaddingTop: =5.63
             Size: =16.86
-            Text: ="Create New Request"
+            Text: ="View Request"
             Width: =455.63
             X: =781
             Y: =180

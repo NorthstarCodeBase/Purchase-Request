@@ -10,7 +10,7 @@ LOG As screen:
         PaddingTop: =5.63
         Size: =22.50
         Text: ="LOG"
-        Width: =1536.75
+        Width: =Parent.Width
         X: =0.00
         ZIndex: =1
 
@@ -22,7 +22,7 @@ LOG As screen:
         PaddingTop: =5.63
         Size: =14.64
         Text: ="Initial Version"
-        Width: =1379.25
+        Width: =1209
         X: =157.50
         Y: =113
         ZIndex: =2
@@ -61,7 +61,7 @@ LOG As screen:
         PaddingTop: =5.63
         Size: =14.64
         Text: ="Update"
-        Width: =1379.25
+        Width: =1209
         X: =157.50
         Y: =65
         ZIndex: =5

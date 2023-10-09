@@ -46,7 +46,7 @@
         TemplatePadding: =0
         TemplateSize: =60
         Visible: =If(CountRows(Gallery1.AllItems) = 0 , false, true)
-        Width: =1536.75
+        Width: =Parent.Width
         X: =0.00
         Y: =214
         ZIndex: =1
@@ -75,7 +75,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =14.64
+            Size: =12
             Text: =ThisItem.Title
             Width: =243.00
             X: =106.89
@@ -90,7 +90,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =14.64
+            Size: =12
             Text: =ThisItem.'Created By'.DisplayName
             Width: =185.63
             X: =570.36
@@ -111,7 +111,7 @@
             TabIndex: =0
             Tooltip: ="View item details"
             Width: =67.50
-            X: =1469.25
+            X: =1296
             ZIndex: =4
 
         Separatorw As rectangle:
@@ -131,7 +131,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =14.64
+            Size: =12
             Text: =Text(Round(Value(ThisItem.'Total Amount'),2),"[$-en-US]0,000") & "      VND  "
             Width: =249.75
             X: =761.63
@@ -173,7 +173,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =17.99
+            Size: =12
             Text: =ThisItem.Department
             Width: =210.38
             X: =352.14
@@ -195,7 +195,7 @@
             PaddingLeft: =0
             PaddingRight: =0.00
             PaddingTop: =0.00
-            Size: =14.64
+            Size: =12
             Text: =ThisItem.Purpose
             Width: =455.63
             X: =1013.63
@@ -211,7 +211,7 @@
         PaddingTop: =5.63
         Size: =20.25
         Text: ="PURCHASING REQUEST MANAGEMENT"
-        Width: =168.76
+        Width: =Parent.Width
         X: =0.00
         ZIndex: =2
 
@@ -252,7 +252,7 @@
         Size: =16.86
         Text: ="Back"
         Width: =180.00
-        X: =1339.86
+        X: =1170
         Y: =112
         ZIndex: =10
 
@@ -267,7 +267,7 @@
         Size: =16.86
         Text: ="Waiting approve"
         Width: =266.63
-        X: =997.89
+        X: =875
         Y: =111
         ZIndex: =11
 
@@ -283,7 +283,7 @@
         Size: =16.86
         Text: ="Show ALL"
         Width: =154.13
-        X: =769.50
+        X: =678
         Y: =112
         ZIndex: =13
 
@@ -301,16 +301,6 @@
         X: =325.11
         Y: =400
         ZIndex: =20
-
-    Icon3 As icon.Reload:
-        Icon: =Icon.Reload
-        OnSelect: =Refresh(PRManagement)
-        PaddingRight: =0.00
-        PaddingTop: =0.00
-        Width: =72.00
-        X: =14.64
-        Y: =4
-        ZIndex: =21
 
     Group9 As group:
         Height: =5
@@ -364,7 +354,7 @@
             SearchItems: =[]
             Size: =14.64
             Width: =207.00
-            X: =208.13
+            X: =177
             Y: =115
             ZIndex: =22
 
@@ -377,7 +367,7 @@
             Size: =14.64
             Text: ="Department "
             Width: =207.00
-            X: =208.13
+            X: =177
             Y: =93
             ZIndex: =23
 
@@ -399,7 +389,7 @@
             SearchItems: =[]
             Size: =14.64
             Width: =207.00
-            X: =489.38
+            X: =428
             Y: =115
             ZIndex: =24
 
@@ -413,18 +403,28 @@
             Text: |-
                 ="Created by:"
             Width: =207.00
-            X: =488.25
+            X: =427
             Y: =93
             ZIndex: =25
 
-    Group13 As group:
+    Timer2 As timer:
+        AutoStart: =true
+        Duration: =120000
+        OnTimerEnd: =Refresh(PRManagement)
+        Repeat: =true
+        Visible: =false
+        X: =14
+        Y: =16
+        ZIndex: =27
+
+    Group2_1 As group:
         Height: =5
         Width: =5
         X: =40
-        Y: =40
-        ZIndex: =27
+        Y: =20
+        ZIndex: =34
 
-        Search_6 As button:
+        Search_18 As button:
             BorderStyle: =BorderStyle.None
             Fill: |
                 =RGBA(0,78,151,59)
@@ -441,12 +441,12 @@
             Text: |-
                 ="ID
                 "
-            Width: =101.25
+            Width: =Title3_1.Width +10
             X: =0.00
             Y: =168
-            ZIndex: =14
+            ZIndex: =28
 
-        Search_7 As button:
+        Search_19 As button:
             BorderStyle: =BorderStyle.None
             Fill: |
                 =RGBA(0,78,151,59)
@@ -463,12 +463,12 @@
             Text: |-
                 ="Title
                 "
-            Width: =254.25
-            X: =100.13
+            Width: =TicketTitle_1.Width + 5
+            X: =TicketTitle_1.X
             Y: =168
-            ZIndex: =15
+            ZIndex: =29
 
-        Search_8 As button:
+        Search_21 As button:
             BorderStyle: =BorderStyle.None
             Fill: |
                 =RGBA(0,78,151,59)
@@ -485,12 +485,12 @@
             Text: |-
                 ="Requester
                 "
-            Width: =190.13
-            X: =563.63
+            Width: =Requester_1.Width+10
+            X: =Requester_1.X
             Y: =168
-            ZIndex: =16
+            ZIndex: =30
 
-        Search_9 As button:
+        Search_22 As button:
             BorderStyle: =BorderStyle.None
             Fill: |
                 =RGBA(0,78,151,59)
@@ -507,12 +507,12 @@
             Text: |-
                 ="Amount
                 "
-            Width: =257.64
-            X: =752.64
+            Width: =GL1_Money_1.Width
+            X: =GL1_Money_1.X
             Y: =168
-            ZIndex: =17
+            ZIndex: =31
 
-        Search_10 As button:
+        Search_20 As button:
             BorderStyle: =BorderStyle.None
             Fill: |
                 =RGBA(0,78,151,59)
@@ -529,12 +529,12 @@
             Text: |-
                 ="Department
                 "
-            Width: =211.50
-            X: =353.26
+            Width: =GL1_Dept_3.Width +10
+            X: =GL1_Dept_3.X
             Y: =168
-            ZIndex: =18
+            ZIndex: =32
 
-        Search_11 As button:
+        Search_23 As button:
             BorderStyle: =BorderStyle.None
             Fill: |
                 =RGBA(0,78,151,59)
@@ -551,17 +551,8 @@
             Text: |-
                 ="Purpose
                 "
-            Width: =526.50
-            X: =1010.25
+            Width: =GL1_Dept_2.Width  + 110
+            X: =1006
             Y: =168
-            ZIndex: =19
-
-        Rectangle4 As rectangle:
-            BorderColor: =RGBA(0, 0, 0, 0)
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =46
-            Width: =1536.75
-            X: =0.00
-            Y: =168
-            ZIndex: =26
+            ZIndex: =33
 

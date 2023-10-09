@@ -26,6 +26,13 @@ App As appinfo:
                     ROLE = "ADMIN",
                     PIC
                 )
+            ),
+            Set(
+                varPurchasing,
+                LookUp(
+                    PRROLE,
+                    ROLE = "Purchasing", PIC
+                )
             )
         );
         // Assign Manager of current user
