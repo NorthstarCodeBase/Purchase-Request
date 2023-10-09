@@ -60,7 +60,7 @@ Screen_Main As screen:
         PaddingTop: =5.63
         Size: =10.13
         Text: ="version 1.0.0"
-        Width: =333.00
+        Width: =149
         X: =0.00
         Y: =718
         ZIndex: =16
@@ -72,7 +72,7 @@ Screen_Main As screen:
         PaddingTop: =5.63
         Size: =10.13
         Text: |-
-            ="Last update: 19/Sep/2023"
+            ="Last update: 09/Oct/2023"
         Width: =333.00
         X: =0.00
         Y: =743
