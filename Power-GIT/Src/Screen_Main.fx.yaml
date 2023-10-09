@@ -12,7 +12,7 @@ Screen_Main As screen:
         PaddingTop: =5.63
         Size: =40.50
         Text: ="PURCHASING CONTROL"
-        Width: =1535.63
+        Width: =1366
         X: =0.00
         ZIndex: =1
 
@@ -26,7 +26,7 @@ Screen_Main As screen:
         Text: |-
             ="User login: " & User().FullName
         Width: =349.89
-        X: =1186.86
+        X: =1017
         Y: =2
         ZIndex: =5
 
@@ -39,7 +39,7 @@ Screen_Main As screen:
         Text: |-
             ="Date: " & Today()
         Width: =349.89
-        X: =1186.86
+        X: =1017
         Y: =35
         ZIndex: =6
 
@@ -87,8 +87,8 @@ Screen_Main As screen:
         Text: |-
             ="Tech support: Hai.vu@northstar.vn;          Nguyet.Chu@northstar.vn"
         Width: =447.74
-        X: =1089.01
-        Y: =732
+        X: =801
+        Y: =718
         ZIndex: =18
 
     Group7 As group:
@@ -104,7 +104,7 @@ Screen_Main As screen:
             Font: =Font.Lato
             Height: =58
             OnSelect: |-
-                =Launch("https://northstarprecision.sharepoint.com/sites/Northstarsystem")
+                =Launch("https://northstarprecision.sharepoint.com/:b:/s/Northstarsystem/ETjJUUo7aixCihQTcadU50gBzOcB9RhqGb0zWWgE5Gv2Pw?e=9zQb9y")
             PaddingRight: =5.63
             PaddingTop: =5.63
             Size: =16.86
@@ -145,7 +145,7 @@ Screen_Main As screen:
         PaddingRight: =0.00
         PaddingTop: =0.00
         Width: =73.14
-        X: =1463.61
+        X: =Parent.Width - Self.Width
         ZIndex: =26
 
     Group14 As group:
@@ -188,8 +188,8 @@ Screen_Main As screen:
             Size: =16.86
             Text: ="Head of Department Approve"
             Width: =455.63
-            X: =955.13
-            Y: =369
+            X: =781
+            Y: =313
             ZIndex: =2
 
         FINApprove As button:
@@ -212,8 +212,8 @@ Screen_Main As screen:
             Size: =16.86
             Text: ="Head of Finance Approve"
             Width: =455.63
-            X: =955.13
-            Y: =507
+            X: =781
+            Y: =451
             ZIndex: =3
 
         GDApprove As button:
@@ -227,8 +227,8 @@ Screen_Main As screen:
             Size: =16.86
             Text: ="General Director Approve"
             Width: =455.63
-            X: =955.13
-            Y: =645
+            X: =781
+            Y: =589
             ZIndex: =4
 
         Create_1 As button:
@@ -242,8 +242,8 @@ Screen_Main As screen:
             Size: =16.86
             Text: ="Create New Request"
             Width: =455.63
-            X: =955.13
-            Y: =236
+            X: =781
+            Y: =180
             ZIndex: =7
 
         Label5 As label:
@@ -254,8 +254,8 @@ Screen_Main As screen:
             Size: =10.13
             Text: ="Click here to view and create new Purchase Order"
             Width: =333.00
-            X: =1015.88
-            Y: =196
+            X: =841
+            Y: =140
             ZIndex: =9
 
         Label5_1 As label:
@@ -266,8 +266,8 @@ Screen_Main As screen:
             Size: =10.13
             Text: ="Managers can click here to approve/reject PR"
             Width: =333.00
-            X: =1015.88
-            Y: =329
+            X: =841
+            Y: =273
             ZIndex: =10
 
         Label5_2 As label:
@@ -278,8 +278,8 @@ Screen_Main As screen:
             Size: =10.13
             Text: ="Head of Finance can click here to approve/reject PR"
             Width: =333.00
-            X: =1017.00
-            Y: =467
+            X: =843
+            Y: =411
             ZIndex: =11
 
         Label5_3 As label:
@@ -290,8 +290,8 @@ Screen_Main As screen:
             Size: =10.13
             Text: ="General Director can click here to approve/reject PR"
             Width: =333.00
-            X: =1018.13
-            Y: =605
+            X: =844
+            Y: =549
             ZIndex: =12
 
         Circle1 As circle:
@@ -299,8 +299,8 @@ Screen_Main As screen:
             Height: =43.89
             Visible: =Value(Mrg_Noti.Text)
             Width: =43.89
-            X: =1379.25
-            Y: =349
+            X: =1205
+            Y: =293
             ZIndex: =19
 
         Mrg_Noti As label:
@@ -322,8 +322,8 @@ Screen_Main As screen:
                 )
             Visible: =Value(Mrg_Noti.Text)
             Width: =43.89
-            X: =1379.25
-            Y: =356
+            X: =1205
+            Y: =300
             ZIndex: =21
 
         Circle1_1 As circle:
@@ -331,8 +331,8 @@ Screen_Main As screen:
             Height: =43.89
             Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
             Width: =43.89
-            X: =1380.38
-            Y: =492
+            X: =1206
+            Y: =436
             ZIndex: =22
 
         FIN_Noti As label:
@@ -353,8 +353,8 @@ Screen_Main As screen:
                 )
             Visible: =Value(FIN_Noti.Text) && varHeadofFinance.Email = User().Email
             Width: =43.89
-            X: =1380.38
-            Y: =499
+            X: =1206
+            Y: =443
             ZIndex: =23
 
         Circle1_2 As circle:
@@ -362,8 +362,8 @@ Screen_Main As screen:
             Height: =43.89
             Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
             Width: =43.89
-            X: =1380.38
-            Y: =629
+            X: =1206
+            Y: =573
             ZIndex: =24
 
         GD_Noti As label:
@@ -385,8 +385,8 @@ Screen_Main As screen:
                 )
             Visible: =Value(GD_Noti.Text) && varDirector.Email = User().Email
             Width: =43.89
-            X: =1380.38
-            Y: =636
+            X: =1206
+            Y: =580
             ZIndex: =25
 
     Group7_1 As group:

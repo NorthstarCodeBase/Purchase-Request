@@ -25,7 +25,7 @@
         PaddingTop: =5.63
         Size: =20.25
         Text: =
-        Width: =1303.89
+        Width: =1146
         X: =0.00
         Y: =79
         ZIndex: =2
@@ -40,7 +40,7 @@
         PaddingTop: =5.63
         Size: =20.25
         Text: ="PURCHASING REQUEST MANAGEMENT"
-        Width: =168.76
+        Width: =1366
         X: =0.00
         ZIndex: =3
 
@@ -99,7 +99,7 @@
         Text: |-
             ="User login: " & User().FullName
         Width: =349.89
-        X: =1170.00
+        X: =1017
         ZIndex: =7
 
     LoginDate As label:
@@ -111,7 +111,7 @@
         Text: |-
             ="Date: " & Today()
         Width: =349.89
-        X: =1170.00
+        X: =1017
         Y: =33
         ZIndex: =8
 
@@ -174,7 +174,7 @@
         TemplateSize: =60
         Visible: |
             =If(CountRows(Gallery2.AllItems) = 0 , false, true)
-        Width: =1536.75
+        Width: =1366
         X: =0.00
         Y: =237
         ZIndex: =11
