@@ -16,8 +16,8 @@ Screen_AppFunction As screen:
         Size: =16.86
         Text: ="Back"
         Width: =300.38
-        X: =851.62
-        Y: =414
+        X: =1030
+        Y: =378
         ZIndex: =3
 
     Title1_3 As label:
@@ -30,7 +30,7 @@ Screen_AppFunction As screen:
         PaddingTop: =5.63
         Size: =20.25
         Text: ="CHECK FOR APPROVE / REJECT"
-        Width: =168.76
+        Width: =Parent.Width
         X: =0.00
         ZIndex: =5
 
@@ -44,7 +44,7 @@ Screen_AppFunction As screen:
         Text: |-
             ="User login: " & User().FullName
         Width: =349.89
-        X: =802.11
+        X: =1017
         ZIndex: =6
 
     LoginDate_3 As label:
@@ -56,7 +56,7 @@ Screen_AppFunction As screen:
         Text: |-
             ="Date: " & Today()
         Width: =349.89
-        X: =802.11
+        X: =1017
         Y: =33
         ZIndex: =7
 
@@ -64,7 +64,7 @@ Screen_AppFunction As screen:
         DisplayMode: |-
             =//If(varItem.'PR Status'.Value="Pending"&&(User().Email=varDirector.Email||User().Email=varHeadofFinance.Email||User().Email="Hai.vu@northstar.vn"),DisplayMode.Edit,DisplayMode.Disabled)
             If(
-                varItem.'PR Status'.Value = "Pending" && (User().Email = varDirector.Email || (User().Email = varHeadofFinance.Email && varItem.'Finance Confirmation'.Value = "Pending") || (Office365Users.MyProfile().Mail = varItem.'Line Manager'.Email && varItem.'Manager Confirmation'.Value = "Pending") || User().Email = "Hai.Vu@northstar.vn"),
+                varItem.'PR Status'.Value = "Pending" && (User().Email = varDirector.Email || (User().Email = varHeadofFinance.Email && varItem.'Finance Confirmation'.Value = "Pending") || (Office365Users.MyProfile().Mail = varItem.'Line Manager'.Email && varItem.'Manager Confirmation'.Value = "Pending")),
                 DisplayMode.Edit,
                 DisplayMode.Disabled
             )
@@ -116,8 +116,8 @@ Screen_AppFunction As screen:
         Size: =16.86
         Text: ="Approve"
         Width: =292.49
-        X: =859.51
-        Y: =180
+        X: =1030
+        Y: =144
         ZIndex: =9
 
     Button1_2 As button:
@@ -177,8 +177,8 @@ Screen_AppFunction As screen:
         Size: =16.86
         Text: ="Reject"
         Width: =292.49
-        X: =859.51
-        Y: =262
+        X: =1030
+        Y: =234
         ZIndex: =10
 
     Form2 As form:
@@ -189,9 +189,7 @@ Screen_AppFunction As screen:
         Item: =varItem
         NumberOfColumns: =2
         OnSuccess: =Notify("Approved Done",NotificationType.Success)
-        SnapToColumns: =false
         Width: =937.00
-        X: =70.00
         Y: =73
         ZIndex: =12
 
@@ -206,8 +204,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "Title")
             Required: =false
             Update: =DataCardValue5.Text
-            Width: =526.50
-            X: =0.00
+            Width: =468
+            X: =0
             Y: =0
             ZIndex: =13
 
@@ -219,7 +217,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -241,8 +239,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey15.Y + DataCardKey15.Height + 5
                 ZIndex: =2
 
@@ -294,11 +292,11 @@ Screen_AppFunction As screen:
             DisplayMode: =Parent.DisplayMode
             DisplayName: =DataSourceInfo([@PRManagement],DataSourceInfo.DisplayName,"TotalAmount")
             Fill: =RGBA(0, 0, 0, 0)
-            Height: =104
+            Height: =175
             Required: =false
             Update: =Value(DataCardValue21.Text)
-            Width: =526.50
-            X: =1.13
+            Width: =468
+            X: =1
             Y: =0
             ZIndex: =13
 
@@ -310,10 +308,10 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =46.11
-                Y: =15
+                Y: =10
                 ZIndex: =1
 
             DataCardValue21 As text:
@@ -334,9 +332,9 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =205.88
-                X: =45.01
-                Y: =53
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey26.Y + DataCardKey26.Height + 5
                 ZIndex: =2
 
             ErrorMessage25 As label:
@@ -379,15 +377,16 @@ Screen_AppFunction As screen:
                 Size: =14.64
                 Text: ="VND"
                 Width: =61.88
-                X: =177.75
-                Y: =53
+                X: =377
+                Y: =49
                 ZIndex: =5
 
             DataCardValue21_1 As text:
                 BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
                 Default: |-
                     =//Parent.Default
-                    Text(Round(Value(Parent.Default/23000),2),"[$-en-US]0,000")
+                    If(Round(Value(Parent.Default/23000),2) >= 1000,
+                    Text(Round(Value(Parent.Default/23000),2),"[$-en-US]0,000.00"),Text(Round(Value(Parent.Default/23000),2),"[$-en-US]0.00"))
                 DelayOutput: =true
                 DisplayMode: =Parent.DisplayMode
                 Font: =Font.Lato
@@ -401,9 +400,9 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =156.38
-                X: =285.75
-                Y: =53
+                Width: =405
+                X: =33
+                Y: =89
                 ZIndex: =6
 
             Label7_1 As label:
@@ -415,8 +414,8 @@ Screen_AppFunction As screen:
                 Size: =14.64
                 Text: ="$"
                 Width: =47.24
-                X: =394.88
-                Y: =55
+                X: =391
+                Y: =90
                 ZIndex: =7
 
         Purpose_DataCard2 As typedDataCard.textualEditCard:
@@ -430,8 +429,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_8")
             Required: =false
             Update: =DataCardValue15.Text
-            Width: =526.50
-            X: =0.00
+            Width: =468
+            X: =0
             Y: =1
             ZIndex: =13
 
@@ -443,7 +442,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -467,8 +466,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey20.Y + DataCardKey20.Height + 5
                 ZIndex: =2
 
@@ -514,8 +513,8 @@ Screen_AppFunction As screen:
             Height: =131
             Required: =false
             Update: =DataCardValue23.Attachments
-            Width: =526.50
-            X: =1.13
+            Width: =468
+            X: =1
             Y: =1
             ZIndex: =13
 
@@ -527,7 +526,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -546,8 +545,8 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey28.Y + DataCardKey28.Height + 5
                 ZIndex: =2
 
@@ -605,8 +604,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_4")
             Required: =false
             Update: =DataCardValue11.Text
-            Width: =526.50
-            X: =1.13
+            Width: =468
+            X: =0
             Y: =2
             ZIndex: =13
 
@@ -618,7 +617,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -640,8 +639,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey18.Y + DataCardKey18.Height + 5
                 ZIndex: =2
 
@@ -685,7 +684,7 @@ Screen_AppFunction As screen:
                 Size: =14.64
                 Text: ="VND"
                 Width: =58.50
-                X: =434.25
+                X: =383
                 Y: =49
                 ZIndex: =5
 
@@ -699,8 +698,8 @@ Screen_AppFunction As screen:
             Height: =50
             Required: =false
             Update: =Value(DataCardValue9.Text)
-            Width: =263.24
-            X: =2.25
+            Width: =468
+            X: =1
             Y: =2
             ZIndex: =13
 
@@ -711,7 +710,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =176.63
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -733,8 +732,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =176.63
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey16.Y + DataCardKey16.Height + 5
                 ZIndex: =2
 
@@ -781,9 +780,9 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_3")
             Required: =false
             Update: =DataCardValue10.Text
-            Width: =175.50
-            X: =2.25
-            Y: =2
+            Width: =468
+            X: =0
+            Y: =3
             ZIndex: =13
 
             DataCardKey17 As label:
@@ -794,7 +793,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =99.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -816,8 +815,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =99.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey17.Y + DataCardKey17.Height + 5
                 ZIndex: =2
 
@@ -864,9 +863,9 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_5")
             Required: =false
             Update: =DataCardValue14.Text
-            Width: =526.50
-            X: =0.00
-            Y: =4
+            Width: =468
+            X: =1
+            Y: =3
             ZIndex: =13
 
             DataCardKey19 As label:
@@ -877,7 +876,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -899,8 +898,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey19.Y + DataCardKey19.Height + 5
                 ZIndex: =2
 
@@ -947,8 +946,8 @@ Screen_AppFunction As screen:
             MaxLength: =DataSourceInfo([@PRManagement], DataSourceInfo.MaxLength, "field_10")
             Required: =false
             Update: =DataCardValue16.Text
-            Width: =526.50
-            X: =1.13
+            Width: =468
+            X: =0
             Y: =4
             ZIndex: =13
 
@@ -960,7 +959,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -982,8 +981,8 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey21.Y + DataCardKey21.Height + 5
                 ZIndex: =2
 
@@ -1030,8 +1029,8 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue19.Selected
             Visible: =false
-            Width: =526.50
-            X: =2.25
+            Width: =468
+            X: =1
             Y: =4
             ZIndex: =13
 
@@ -1043,7 +1042,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -1064,8 +1063,8 @@ Screen_AppFunction As screen:
                 SelectMultiple: =false
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey24.Y + DataCardKey24.Height + 5
                 ZIndex: =2
 
@@ -1112,9 +1111,9 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue20.Selected
             Visible: =false
-            Width: =526.50
-            X: =3.38
-            Y: =4
+            Width: =468
+            X: =0
+            Y: =5
             ZIndex: =13
 
             DataCardKey25 As label:
@@ -1125,7 +1124,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =459.00
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -1146,8 +1145,8 @@ Screen_AppFunction As screen:
                 SelectMultiple: =false
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey25.Y + DataCardKey25.Height + 5
                 ZIndex: =2
 
@@ -1183,90 +1182,6 @@ Screen_AppFunction As screen:
                 Y: =DataCardKey25.Y
                 ZIndex: =4
 
-        LineMgr_ConfirmDate_DataCard1 As typedDataCard.textualEditCard:
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="field_12"
-            Default: =ThisItem.'Manager Confirmation'.Value
-            DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@PRManagement],DataSourceInfo.DisplayName,"field_12")
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =50
-            MaxLength: =
-            Required: =false
-            Update: =DataCardValue18.Text
-            Visible: =false
-            Width: =526.50
-            X: =4.50
-            Y: =4
-            ZIndex: =13
-
-            DataCardKey23 As label:
-                AutoHeight: =true
-                Font: =Font.Lato
-                Height: =34
-                PaddingRight: =5.63
-                PaddingTop: =5.63
-                Size: =14.64
-                Text: =Parent.DisplayName
-                Width: =459.00
-                Wrap: =false
-                X: =33.75
-                Y: =10
-                ZIndex: =1
-
-            DataCardValue18 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =Parent.Default
-                DelayOutput: =true
-                DisplayMode: =Parent.DisplayMode
-                Font: =Font.Lato
-                MaxLength: =Parent.MaxLength
-                PaddingLeft: =5
-                PaddingRight: =5.63
-                PaddingTop: =5.63
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =14.64
-                Tooltip: =Parent.DisplayName
-                Width: =459.00
-                X: =33.75
-                Y: =DataCardKey23.Y + DataCardKey23.Height + 5
-                ZIndex: =2
-
-            ErrorMessage22 As label:
-                AutoHeight: =true
-                Font: =Font.Lato
-                Height: =10
-                Live: =Live.Assertive
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0.00
-                PaddingTop: =0.00
-                Size: =15.74
-                Text: =Parent.Error
-                Visible: =Parent.DisplayMode=DisplayMode.Edit
-                Width: =459.00
-                X: =33.75
-                Y: =DataCardValue18.Y + DataCardValue18.Height
-                ZIndex: =3
-
-            StarVisible22 As label:
-                Align: =Align.Center
-                Font: =Font.Lato
-                Height: =DataCardKey23.Height
-                PaddingRight: =5.63
-                PaddingTop: =5.63
-                Size: =14.64
-                Text: ="*"
-                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
-                Width: =33.75
-                Wrap: =false
-                X: =0.00
-                Y: =DataCardKey23.Y
-                ZIndex: =4
-
         Approvers_DataCard2 As typedDataCard.comboBoxMultiSelectEditCard:
             BorderStyle: =BorderStyle.Solid
             DataField: ="Approvers"
@@ -1278,9 +1193,9 @@ Screen_AppFunction As screen:
             Required: =false
             Update: =DataCardValue22.SelectedItems
             Visible: =false
-            Width: =438.75
-            X: =5.63
-            Y: =4
+            Width: =468
+            X: =0
+            Y: =6
             ZIndex: =13
 
             DataCardKey27 As label:
@@ -1291,7 +1206,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =371.25
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -1312,8 +1227,8 @@ Screen_AppFunction As screen:
                 Size: =14.64
                 Template: =ListItemTemplate.Person
                 Tooltip: =Parent.DisplayName
-                Width: =371.25
-                X: =33.75
+                Width: =Parent.Width - 60
+                X: =30
                 Y: =DataCardKey27.Y + DataCardKey27.Height + 5
                 ZIndex: =2
 
@@ -1349,6 +1264,90 @@ Screen_AppFunction As screen:
                 Y: =DataCardKey27.Y
                 ZIndex: =4
 
+        LineMgr_ConfirmDate_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_12"
+            Default: =ThisItem.'Manager Confirmation'.Value
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: =DataSourceInfo([@PRManagement],DataSourceInfo.DisplayName,"field_12")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =
+            Required: =false
+            Update: =DataCardValue18.Text
+            Visible: =false
+            Width: =468
+            X: =1
+            Y: =5
+            ZIndex: =13
+
+            DataCardKey23 As label:
+                AutoHeight: =true
+                Font: =Font.Lato
+                Height: =34
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =33.75
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue18 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Font: =Font.Lato
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =14.64
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                ZIndex: =2
+
+            ErrorMessage22 As label:
+                AutoHeight: =true
+                Font: =Font.Lato
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0.00
+                PaddingTop: =0.00
+                Size: =15.74
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =459.00
+                X: =33.75
+                Y: =DataCardValue18.Y + DataCardValue18.Height
+                ZIndex: =3
+
+            StarVisible22 As label:
+                Align: =Align.Center
+                Font: =Font.Lato
+                Height: =DataCardKey23.Height
+                PaddingRight: =5.63
+                PaddingTop: =5.63
+                Size: =14.64
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =33.75
+                Wrap: =false
+                X: =0.00
+                Y: =DataCardKey23.Y
+                ZIndex: =4
+
         "'PR Status_DataCard2' As typedDataCard.textualEditCard":
             BorderStyle: =BorderStyle.Solid
             DataField: ="field_11"
@@ -1362,9 +1361,9 @@ Screen_AppFunction As screen:
             Update: =DataCardValue17.Text
             Visible: |
                 =false
-            Width: =263.24
-            X: =2.25
-            Y: =450
+            Width: =468
+            X: =1
+            Y: =6
             ZIndex: =13
 
             DataCardKey22 As label:
@@ -1375,7 +1374,7 @@ Screen_AppFunction As screen:
                 PaddingTop: =5.63
                 Size: =14.64
                 Text: =Parent.DisplayName
-                Width: =195.75
+                Width: =Parent.Width - 60
                 Wrap: =false
                 X: =33.75
                 Y: =10
@@ -1399,9 +1398,9 @@ Screen_AppFunction As screen:
                 RadiusTopRight: =0
                 Size: =14.64
                 Tooltip: =Parent.DisplayName
-                Width: =195.75
-                X: =33.75
-                Y: =75
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey22.Y + DataCardKey22.Height + 5
                 ZIndex: =2
 
             ErrorMessage21 As label:
@@ -1445,7 +1444,7 @@ Screen_AppFunction As screen:
             ="Created Date: "  & varItem.Created
         Visible: =If(Form2.Mode = FormMode.New, false, true)
         Width: =394.88
-        X: =757.12
+        X: =972
         Y: =482
         ZIndex: =17
 
@@ -1461,7 +1460,7 @@ Screen_AppFunction As screen:
             Height: =286
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =403.88
-            X: =793.00
+            X: =959
             Y: =482
             ZIndex: =14
 
@@ -1476,7 +1475,7 @@ Screen_AppFunction As screen:
             VerticalAlign: =VerticalAlign.Top
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =318.38
-            X: =793.00
+            X: =1030
             Y: =562
             ZIndex: =15
 
@@ -1490,7 +1489,7 @@ Screen_AppFunction As screen:
                 ="Approve Log:"
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =136.14
-            X: =793.00
+            X: =1030
             Y: =523
             ZIndex: =16
 

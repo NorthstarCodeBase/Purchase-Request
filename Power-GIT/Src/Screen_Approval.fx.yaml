@@ -197,7 +197,7 @@
             PaddingTop: =0.00
             Size: =12
             Text: =ThisItem.Purpose
-            Width: =455.63
+            Width: =300
             X: =1013.63
             ZIndex: =13
 
