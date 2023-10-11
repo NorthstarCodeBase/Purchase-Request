@@ -435,3 +435,11 @@ Screen_Main As screen:
             Y: =686
             ZIndex: =29
 
+    Timer3 As timer:
+        AutoStart: =true
+        Duration: =100
+        OnTimerEnd: =If(Mid(User().Email,Find("@",User().Email)+1,20) = "polaris.vn", Navigate('Wrong Email Sreen'))
+        Visible: =false
+        Y: =107
+        ZIndex: =31
+

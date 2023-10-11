@@ -110,7 +110,7 @@ App As appinfo:
                 )
             )
         );
-    StartScreen: |-
+    StartScreen: |
         =
         // Start Screen is for direct link to application
         

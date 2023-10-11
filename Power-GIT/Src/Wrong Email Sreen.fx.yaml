@@ -1,0 +1,44 @@
+"'Wrong Email Sreen' As screen":
+    Fill: =RGBA(56, 96, 178, 1)
+
+    Label15 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Semibold
+        Height: =234
+        Size: =70
+        Text: ="WRONG EMAIL LOG IN"
+        Width: =784
+        X: =313
+        Y: =79
+        ZIndex: =1
+
+    Label16 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Black'
+        Height: =168
+        Size: =20
+        Text: |-
+            ="Sorry for this inconvenient, but you are using Hai.Vu@northstar.vn, which cannot access to Northstar Environment
+            Please log out and login with Northstar Account
+            Thanks"
+        Width: =960
+        X: =225
+        Y: =313
+        ZIndex: =2
+
+    Button2 As button:
+        Color: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(255, 255, 255, 1)
+        Font: =Font.'Lato Black'
+        Height: =130
+        OnSelect: =Exit(true)
+        Size: =40
+        Text: ="Log out"
+        Width: =252
+        X: =579
+        Y: =520
+        ZIndex: =3
+

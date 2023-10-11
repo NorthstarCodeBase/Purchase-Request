@@ -78,7 +78,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Approvers_DataCard2",
-      "ParentIndex": 11,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5541,7 +5541,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue11",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8258,7 +8258,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "%FieldValue.ID%",
       "Name": "DataCardValue21",
-      "ParentIndex": 3,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15262,7 +15262,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Label7",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -15814,7 +15814,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "Label7_2",
-      "ParentIndex": 2,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -16941,7 +16941,7 @@
       "LayoutName": "vertical",
       "MetaDataIDKey": "",
       "Name": "LineMgr_ConfirmDate_DataCard1",
-      "ParentIndex": 12,
+      "ParentIndex": 11,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
