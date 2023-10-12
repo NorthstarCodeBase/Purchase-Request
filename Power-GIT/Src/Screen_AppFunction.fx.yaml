@@ -1493,3 +1493,12 @@ Screen_AppFunction As screen:
             Y: =523
             ZIndex: =16
 
+    Timer3_1 As timer:
+        AutoStart: =true
+        Duration: =100
+        OnTimerEnd: =If(Mid(User().Email,Find("@",User().Email)+1,20) = "polaris.com", Navigate('Wrong Email Sreen'))
+        Visible: =false
+        X: =1030
+        Y: =88
+        ZIndex: =18
+
