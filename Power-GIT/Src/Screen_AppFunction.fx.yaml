@@ -73,43 +73,7 @@ Screen_AppFunction As screen:
         Height: =47
         HoverFill: =ColorFade(RGBA(99, 139, 44, 1), -20%)
         OnSelect: |-
-            =
-            UpdateIf(
-                PRManagement,
-                varItem.ID = ID  && varItem.'Total Amount'  > 11500000 && varMgr = 1,
-                {
-                    'Manager Confirmation': {Value: "Approve"},
-                    'Finance Confirmation': {Value: "Pending"},
-                    'Approve Log': varItem.'Approve Log' & Char(10) & Now() & ": " & User().FullName & ": approve!"
-                },
-                varItem.ID = ID && varMgr = 1 && varItem.'Total Amount' < 11500000,
-                {
-                    'Manager Confirmation': {Value: "Approve"},
-                    'Finance Confirmation': {Value: "Approve"},
-                    'GD Confirmation'     : {Value: "Approve"},
-                    'Approve Log':  Now() & ": " & User().FullName & ": approve!" 
-                    &  Char(10) & Now() & ": " & varHeadofFinance.DisplayName & ": auto approve!"
-                    & Char(10)  & Char(10) & Now() & ": " & varDirector.DisplayName & ": auto approve!"
-                },
-                varItem.ID = ID && varMgr = 2 && varItem.'Total Amount' > 115000000,
-                {
-                    'Finance Confirmation': {Value: "Approve"},
-                    'GD Confirmation'     : {Value: "Pending"},
-                    'Approve Log': varItem.'Approve Log' & Char(10) & Now() & ": " & User().FullName & ": approve!"
-                },
-                varItem.ID = ID && varMgr = 2 && varItem.'Total Amount' < 115000000,
-                {
-                    'Finance Confirmation': {Value: "Approve"},
-                    'GD Confirmation'     : {Value: "Approve"},
-                    'Approve Log': varItem.'Approve Log' & Char(10) & Now() & ": " & User().FullName & ": approve!"
-                    & Char(10)  & Char(10) & Now() & ": " & varDirector.DisplayName & ": auto approve!"
-                },
-                varItem.ID = ID && varMgr = 3 ,
-                {
-                    'GD Confirmation': {Value: "Approve"},
-                    'Approve Log': varItem.'Approve Log' & Char(10) & Now() & ": " & User().FullName & ": approve!"
-                }
-            );
+            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,true,1,1000000,varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName);
             Navigate('Approve Done')
         PaddingRight: =5.63
         PaddingTop: =5.63
@@ -127,58 +91,16 @@ Screen_AppFunction As screen:
         Height: =47
         HoverColor: =ColorFade(RGBA(255, 255, 255, 1),20%)
         HoverFill: =ColorFade(RGBA(203, 102, 102, 1), -20%)
-        OnSelect: |-
-            =UpdateIf(
-                PRManagement,
-                 /* varuser.Mail = varManager.Email &&  */varItem.ID = ID && varMgr = 1,
-                {
-                    'Manager Confirmation': {Value: "Rejected"},
-                    'PR Status': {Value: "Rejected"},
-                    'Approve Log': varItem.'Approve Log' & Char(13) & Now() & ": " & User().FullName & ": rejected!"
-                },
-                 /* varuser.Mail = varHeadofFinance.Email && */varItem.ID = ID && varMgr = 2 ,
-                {
-                    'Finance Confirmation': {Value: "Rejected"},
-                    'PR Status': {Value: "Rejected"},
-                    'Approve Log': varItem.'Approve Log' & Char(13) & Now() & ": " & User().FullName & ": rejected!"
-                },
-                 /* varuser.Mail = varDirector.Email && */ varItem.ID  = ID && varMgr = 3,
-                {
-                    'GD Confirmation': {Value: "Rejected"},
-                    'PR Status': {Value: "Rejected"},
-                    'Approve Log': varItem.'Approve Log' & Char(13) & Now() & ": " & User().FullName & ": rejected!"
-                }
-            );
+        OnSelect: |
+            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,false,varMgr,varItem.'Total Amount',varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName);
             Navigate('Approve Done')
-            
-            /*
-            UpdateIf(
-                PRManagement,
-                  varuser.Mail = varManager.Email &&  varItem.ID = ID,
-                {
-                    'Manager Confirmation': {Value: "Rejected"},
-                    'PR Status': {Value: "Rejected"}
-                },
-                  varuser.Mail = varHeadofFinance.Email && varItem.ID = ID,
-                {
-                    'Finance Confirmation': {Value: "Rejected"},
-                    'PR Status': {Value: "Rejected"}
-                },
-                  varuser.Mail = varDirector.Email &&  varItem.ID  = ID,
-                {
-                    'GD Confirmation': {Value: "Rejected"},
-                    'PR Status': {Value: "Rejected"}
-                }
-            );
-            Navigate(Message_Done)
-            */
         PaddingRight: =5.63
         PaddingTop: =5.63
         Size: =16.86
         Text: ="Reject"
         Width: =292.49
-        X: =1030
-        Y: =234
+        X: =1017
+        Y: =294
         ZIndex: =10
 
     Form2 As form:
@@ -583,7 +505,7 @@ Screen_AppFunction As screen:
                 ZIndex: =4
 
             "InfoButtonCanvas1 As 'Information button'":
-                BasePaletteColor: =""
+                BasePaletteColor: =
                 Content: ="Click to Attachment to download and view"
                 DisplayMode: =DisplayMode.View
                 Height: =32
@@ -1464,21 +1386,6 @@ Screen_AppFunction As screen:
             Y: =482
             ZIndex: =14
 
-        Label8 As label:
-            Height: =206
-            PaddingRight: =5.63
-            PaddingTop: =5.63
-            Size: =14.64
-            Text: |-
-                =If(
-                varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
-            VerticalAlign: =VerticalAlign.Top
-            Visible: =If(Form2.Mode = FormMode.New, false, true)
-            Width: =318.38
-            X: =1030
-            Y: =562
-            ZIndex: =15
-
         Label9 As label:
             Font: =Font.'Lato Black'
             Height: =39
@@ -1501,4 +1408,23 @@ Screen_AppFunction As screen:
         X: =1030
         Y: =88
         ZIndex: =18
+
+    Button3 As button:
+        Height: =56
+        OnSelect: =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,true,1,1000000,varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName)
+        Text: ="Approve"
+        Width: =292
+        X: =1014
+        Y: =214
+        ZIndex: =19
+
+    HtmlText2 As htmlViewer:
+        Height: =77
+        HtmlText: |-
+            =If(
+            varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
+        Width: =378
+        X: =984
+        Y: =562
+        ZIndex: =20
 
