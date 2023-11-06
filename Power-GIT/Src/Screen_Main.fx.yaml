@@ -59,7 +59,7 @@ Screen_Main As screen:
         PaddingRight: =5.63
         PaddingTop: =5.63
         Size: =10.13
-        Text: ="version 1.0.0"
+        Text: ="version 1.0.3"
         Width: =149
         X: =0.00
         Y: =718
@@ -72,7 +72,7 @@ Screen_Main As screen:
         PaddingTop: =5.63
         Size: =10.13
         Text: |-
-            ="Last update: 09/Oct/2023"
+            ="Last update: 06/Nov/2023"
         Width: =333.00
         X: =0.00
         Y: =743

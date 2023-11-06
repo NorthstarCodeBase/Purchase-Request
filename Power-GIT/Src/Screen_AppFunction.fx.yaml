@@ -1411,7 +1411,7 @@ Screen_AppFunction As screen:
         ZIndex: =18
 
     HtmlText2 As htmlViewer:
-        Height: =77
+        Height: =206
         HtmlText: |-
             =If(
             varItem.'Approve Log' = Blank(),"Waiting for Approval",varItem.'Approve Log' )
