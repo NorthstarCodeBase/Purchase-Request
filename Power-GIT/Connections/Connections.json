@@ -30,43 +30,9 @@
     ],
     "dependencies": {},
     "dependents": [
-      "4282d49e-6fc9-4ae8-904b-4b9fd0cb1b10"
+      "ea383f98-55e5-4448-88de-cb01418261ba"
     ],
     "id": "17154283-55f4-46da-afd2-58e263e6cfa4"
-  },
-  "4282d49e-6fc9-4ae8-904b-4b9fd0cb1b10": {
-    "connectionRef": {
-      "displayName": "Logic flows",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
-      "parameterHints": {
-        "17154283-55f4-46da-afd2-58e263e6cfa4": {
-          "value": "shared_sharepointonline"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "704950f5-77ce-4774-8041-103069657dd2"
-        }
-      },
-      "parameterHintsV2": {
-        "shared_sharepointonline": {
-          "value": "17154283-55f4-46da-afd2-58e263e6cfa4"
-        },
-        "workflowEntityId": {},
-        "workflowName": {
-          "value": "704950f5-77ce-4774-8041-103069657dd2"
-        }
-      }
-    },
-    "datasets": {},
-    "dataSources": [
-      "Purchase_Request_Approval_Flow"
-    ],
-    "dependencies": {
-      "shared_sharepointonline": "17154283-55f4-46da-afd2-58e263e6cfa4"
-    },
-    "dependents": [],
-    "id": "4282d49e-6fc9-4ae8-904b-4b9fd0cb1b10"
   },
   "5c4f7616-4279-45d2-a0ad-e1129eb37d23": {
     "appActions": [
@@ -105,7 +71,50 @@
       "Office365Outlook"
     ],
     "dependencies": {},
-    "dependents": [],
+    "dependents": [
+      "ea383f98-55e5-4448-88de-cb01418261ba"
+    ],
     "id": "d85bf51b-bd73-47c0-85ee-44519829602f"
+  },
+  "ea383f98-55e5-4448-88de-cb01418261ba": {
+    "connectionRef": {
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1664/1.0.1664.3477/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "17154283-55f4-46da-afd2-58e263e6cfa4": {
+          "value": "shared_sharepointonline"
+        },
+        "d85bf51b-bd73-47c0-85ee-44519829602f": {
+          "value": "shared_office365"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "704950f5-77ce-4774-8041-103069657dd2"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_office365": {
+          "value": "d85bf51b-bd73-47c0-85ee-44519829602f"
+        },
+        "shared_sharepointonline": {
+          "value": "17154283-55f4-46da-afd2-58e263e6cfa4"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "704950f5-77ce-4774-8041-103069657dd2"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "Purchase_Request_Approval_Flow"
+    ],
+    "dependencies": {
+      "shared_office365": "d85bf51b-bd73-47c0-85ee-44519829602f",
+      "shared_sharepointonline": "17154283-55f4-46da-afd2-58e263e6cfa4"
+    },
+    "dependents": [],
+    "id": "ea383f98-55e5-4448-88de-cb01418261ba"
   }
 }

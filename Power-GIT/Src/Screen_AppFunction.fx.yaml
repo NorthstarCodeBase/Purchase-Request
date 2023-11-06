@@ -73,7 +73,7 @@ Screen_AppFunction As screen:
         Height: =47
         HoverFill: =ColorFade(RGBA(99, 139, 44, 1), -20%)
         OnSelect: |-
-            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,true,1,1000000,varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName);
+            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,1,varItem.'Total Amount',varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName,{text_3: "true"});
             Navigate('Approve Done')
         PaddingRight: =5.63
         PaddingTop: =5.63
@@ -91,9 +91,9 @@ Screen_AppFunction As screen:
         Height: =47
         HoverColor: =ColorFade(RGBA(255, 255, 255, 1),20%)
         HoverFill: =ColorFade(RGBA(203, 102, 102, 1), -20%)
-        OnSelect: |
-            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,false,varMgr,varItem.'Total Amount',varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName);
-            Navigate('Approve Done')
+        OnSelect: |-
+            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,1,varItem.'Total Amount',varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName,{text_3: "false"});
+            Navigate(Message_Done)
         PaddingRight: =5.63
         PaddingTop: =5.63
         Size: =16.86
