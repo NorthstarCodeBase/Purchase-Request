@@ -92,8 +92,9 @@ Screen_AppFunction As screen:
         HoverColor: =ColorFade(RGBA(255, 255, 255, 1),20%)
         HoverFill: =ColorFade(RGBA(203, 102, 102, 1), -20%)
         OnSelect: |-
-            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,1,varItem.'Total Amount',varHeadofFinance.DisplayName,varDirector.DisplayName,varManager.DisplayName,{text_3: "false"});
-            Navigate(Message_Done)
+            =Purchase_Request_Approval_Flow.Run(varItem.ID,User().Email,1,varItem.'Total Amount',varHeadofFinance.DisplayName,varDirector.DisplayName,{text_2:Text(varManager.DisplayName)} ,{text_3: "false"});
+            Navigate('Approve Done')
+            ;
         PaddingRight: =5.63
         PaddingTop: =5.63
         Size: =16.86
