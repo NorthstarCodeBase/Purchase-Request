@@ -1397,7 +1397,7 @@ Screen_AppFunction As screen:
                 ="Approve Log:"
             Visible: =If(Form2.Mode = FormMode.New, false, true)
             Width: =136.14
-            X: =1030
+            X: =984
             Y: =523
             ZIndex: =16
 
